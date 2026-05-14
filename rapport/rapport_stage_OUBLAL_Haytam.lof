@@ -1,0 +1,38 @@
+\babel@toc {french}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Logo du Ministère de la Jeunesse, de la Culture et de la Communication}}{12}{figure.1.1}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Logo du Ministère de la Jeunesse, de la Culture et de la Communication}}{16}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Principales tables de la base de données}}{18}{figure.2.2}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Structure de la table \textit {places}}}{19}{figure.2.3}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Structure de la table \textit {regies}}}{20}{figure.2.4}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Structure de la table \textit {revenue\_types}}}{21}{figure.2.5}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Structure de la table \textit {recettes}}}{22}{figure.2.6}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Structure de la table \textit {ticketing\_commands}}}{23}{figure.2.7}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Structure de la table \textit {ticketing\_command\_lines}}}{24}{figure.2.8}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Relations principales entre les tables}}{25}{figure.2.9}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Architecture globale du système décisionnel}}{27}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Schéma en étoile du Data Warehouse réalisé avec Power BI}}{29}{figure.3.2}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Fichier CSV brut extrait depuis MySQL (revenue\_types)}}{32}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Transformation des données avec le composant tMap}}{33}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Exécution du job ETL dans Talend}}{33}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Résultat final après transformation des données}}{34}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Données sources de la table \textit {places} avant transformation}}{35}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Transformation de la table \textit {places} avec le composant tMap}}{36}{figure.4.6}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Résultat final du processus ETL appliqué à la table \textit {places}}}{36}{figure.4.7}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Fichier recettes avant traitement dans Talend}}{37}{figure.4.8}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Transformation des données du fichier recettes avec tMap}}{38}{figure.4.9}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Résultat final du fichier recettes après traitement ETL}}{39}{figure.4.10}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Données sources de la table \textit {regies} avant traitement}}{40}{figure.4.11}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Données de la table \textit {regies} après transformation et correction de l’encodage}}{41}{figure.4.12}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Importation des fichiers CSV dans Power BI}}{44}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Modèle relationnel des données dans Power BI}}{45}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Création des mesures KPI dans Power BI}}{47}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Cartes KPI principales du tableau de bord}}{48}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Analyse des recettes par monument}}{49}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Analyse des recettes par type de revenu}}{49}{figure.5.6}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Évolution des recettes dans le temps}}{50}{figure.5.7}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Analyse des recettes par régie}}{51}{figure.5.8}%

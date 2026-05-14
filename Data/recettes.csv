@@ -1,0 +1,7 @@
+Field,Type,Null,Key,Default,Extra
+id,varchar(20),NO,PRI,NULL,
+revenue_type_id,varchar(20),YES,,NULL,
+place_id,varchar(20),YES,,NULL,
+date_versement,datetime,YES,,NULL,
+amount,"double(10,2)",YES,,NULL,
+created_at,timestamp,YES,,NULL,

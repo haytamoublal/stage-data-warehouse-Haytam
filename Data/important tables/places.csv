@@ -1,0 +1,144 @@
+regie_id,id,title,city_id,is_ticketing
+22,100,"{""fr"":""SALLE DU THEATRE NATIONAL MESSALLA TETOAUN""}",12,0
+1,101,"{""fr"":""Conservatoire National De Musique Et De Danse -Agdal""}",1,0
+1,102,"{""fr"":""Conservatoire du musique Moulay Rachid""}",1,0
+1,103,"{""fr"":""Conservatoire de musique et d'art chor\u00e9graphique Sal\u00e9""}",1,0
+1,104,"{""fr"":""F.N.A.C""}",12,0
+1,105,"{""fr"":""Salle de la maison de culture Skhirat""}",12,0
+1,106,"{""fr"":""Salle de spectacles de la maison de culture Tamsna""}",12,0
+1,107,"{""fr"":""Salle Haj Bahnini""}",1,0
+1,108,"{""fr"":""Salle Mohamed Hajji""}",12,0
+25,109,"{""fr"":""Conservatoire de Musique et d'arts chorigraphiques \u00e0 Errachidia""}",10,0
+23,110,"{""fr"":""Salle du Centre Culturel Khair-Eddine""}",28,0
+21,111,"{""fr"":""Conservatoire de musique et d'arts chor\u00e9graphiques de Taza""}",,0
+21,112,"{""fr"":""Salle de th\u00e9\u00e2tre de Taza""}",12,0
+20,113,"{""fr"":""Conservatoire National de Musique de Tanger""}",,0
+18,114,"{""fr"":""Conservatoire de Musique de Safi""}",,0
+16,115,"{""fr"":""Maison de Culture \u00e0 Ouarzazate""}",12,0
+4,116,"{""fr"":""Conservatoire de Musique de Mekn\u00e8s""}",,0
+9,117,"{""fr"":""Maison de culture d'Es-Smaraaaa""}",12,0
+2,118,"{""fr"":""Conservatoire de Musique de Dchira \u00e0 Agadir""}",8,0
+2,119,"{""fr"":""Conservatoire de Musique de Ait Melloul""}",8,0
+33,120,"{""fr"":""Centre culture al wahda""}",23,0
+33,121,"{""fr"":""Centre culture al walae""}",23,0
+33,122,"{""fr"":""Conservatoire de musique et d'art chor\u00e9graphique \u00e0 dakhla""}",23,0
+30,123,"{""fr"":""Conservatoire de musique et d'art chor\u00e9grahique de mhamid",,
+12,124,"{""fr"":""Conservatoire de Musique de K\u00e9nitra""}",18,0
+12,126,"{""fr"":""Conservatoire de musique \u00e0 sidi Kacem""}",24,0
+22,128,"{""fr"":""Salle du complexe culturel ouazane""}",19,0
+30,130,"{""fr"":""Maison culture el kelaa des sraghna""}",6,0
+31,131,"{""fr"":""Conservatoire de musique et d'art chor\u00e9graphique Abdelouahab Agoumy""}",16,0
+11,132,"{""fr"":""Conservatoire de Musique de F\u00e8s""}",29,0
+4,133,"{""fr"":""maison culture mouly driss zerhoun""}",4,0
+14,134,"{""fr"":""Conservatoire de musique de Laayoun""}",27,0
+14,135,"{""fr"":""CENTRE CULTUREL OUM SAAD""}",27,0
+14,136,"{""fr"":""Maison de culture de Laayoun""}",27,0
+14,137,"{""fr"":""Centre Culturel De Tarfaya""}",27,0
+8,138,"{""fr"":""Th\u00e9atre al Hay de la ville portugaise""}",30,0
+8,139,"{""fr"":""Site historique Al-Qabtaniya""}",30,0
+8,140,"{""fr"":""La cit\u00e9 portugaise""}",30,0
+8,141,"{""fr"":""La maison de la culture Zmamra""}",30,0
+22,142,"{""en"":""Tetouan National School of Arts and Crafts""",,
+22,143,"{""fr"":""Th\u00e9atre du Centre Culturel de Martil""}",19,0
+17,144,"{""fr"":""conservatoire de musique de jerada""}",20,0
+7,145,"{""fr"":""conservatoire de musique de Chefchaouen""}",11,0
+22,146,"{""fr"":""Centre Culturel De T\u00e9touan""}",19,0
+22,147,"{""fr"":""Salle complex de Ouazzane""}",32,0
+20,148,"{""fr"":""Centre Culturel B\u00e9ni Makada""}",3,0
+22,149,"{""fr"":""centre culturel lalla aicha""}",19,0
+22,150,"{""fr"":""centre culturel martil""}",19,0
+22,151,"{""fr"":""centre culturel fnideq""}",34,0
+22,152,"{""fr"":""centre culturel M'diq""}",35,0
+1,153,"{""fr"":""SIEL""}",1,0
+6,154,"{""fr"":""SILEJ""}",9,0
+31,155,"{""fr"":""CENTRE CULTUREL Abilkacem Ziani Khenifra""}",36,0
+25,156,"{""fr"":""CENTRE CULTUREL ERRACHIDIA""}",10,0
+25,157,"{""fr"":""CENTRE CULTUREL RISSANI""}",37,0
+13,158,"{""fr"":""Conservatoire de Musique de Khouribga""}",33,0
+16,160,"{""fr"":""Centre culturel tinghir""}",39,0
+35,161,"{""fr"":""Centre culturel Taroudant""}",40,0
+34,162,"{""fr"":""Salle Test""}",12,0
+10,163,"{""fr"":""sqala la medina""}",5,0
+6,164,"{""fr"":""Centre culturel ben msik""}",9,0
+6,165,"{""fr"":""Maison de culture bouznika""}",42,0
+1,166,"{""fr"":""Salle de Th\u00e9\u00e2tre Al Mansour""}",1,0
+16,167,"{""fr"":""CENTRE CULTUREL ZAGORA""}",31,0
+20,168,"{""fr"":""Centre culturel de Bni Makada""}",3,0
+23,169,"{""fr"":""Conservatoire Musical Ra\u00efss Lhaj Belaid""}",28,0
+36,170,"{""fr"":""Conservatoire de Guelmim""}",43,0
+1,171,"{""fr"":""Auditorium de l'INSMAC""}",1,0
+31,172,"{""fr"":""Centre Culturel Kasbat Tadla""}",44,0
+21,173,"{""fr"":""Salle de spectacles de Taza""}",26,0
+8,174,"{""fr"":""Le sous sol du bastion Saint S\u00e9bastien""}",30,0
+8,175,"{""fr"":""Le sous sol du bastion de l'ange""}",30,0
+20,22,"{""fr"":""Grottes d'Hercule""",,
+20,23,"{""fr"":""Palais Perdicaris""",,
+30,24,"{""fr"":""Palais El Bahia""",,
+30,25,"{""fr"":""Palais  Badii""",,
+30,26,"{""fr"":""Tombeaux Saadiens""",,
+31,28,"{""fr"":""CIP Ain Assardoun""",,
+30,29,"{""fr"":""Centre culturel daoudiate""}",6,0
+30,30,"{""fr"":""Pavillon de la M\u00e9nara""",,
+30,31,"{""fr"":""Coupole Almoravides""",,
+30,32,"{""fr"":""Th\u00e9\u00e2tre Dar Attakafa""}",6,0
+20,33,"{""fr"":""Palais des arts et de la culture""}",3,0
+7,34,"{""fr"":""Qasba de Chefchaouen""",,
+7,35,"{""fr"":""Masrah al kasabah""}",11,0
+7,36,"{""fr"":""Salle du centre culturel de Chefchaouen""}",11,0
+24,38,"{""fr"":""Site  arch\u00e9ologique de Volubilis""",,
+10,39,"{""fr"":""La Sqala  du Port""",,
+15,41,"{""fr"":""Site  arch\u00e9ologique de Lixus""",,
+1,43,"{""fr"":""M\u00e9dersa des M\u00e9rinides""",,
+17,44,"{""fr"":""Centre Culturel de Bouarfa""}",21,0
+17,46,"{""fr"":""Centre culturel de Debdou""}",20,0
+17,47,"{""fr"":""Th\u00e9atre Mohamed VI Oujda""}",20,0
+17,48,"{""fr"":""Conservatoire regional de la musique \u00e0 oujda""}",20,0
+11,49,"{""fr"":""Centre culturel 02 octobre wtatelhaj""}",41,0
+11,50,"{""fr"":""Centre culturel hay al massira fes""}",12,0
+4,51,"{""fr"":""Centre culturel mohamed Mennouni""}",4,0
+12,52,"{""fr"":""Centre culturel  de sidi slimane""}",18,0
+12,53,"{""fr"":""Centre culturel Mechraa Bel Ksiri""}",18,0
+12,54,"{""fr"":""CENTRE CULTUREL kENITRA""}",18,0
+11,55,"{""fr"":""CENTRE CULTUREL D EDUCATION CULTURELLE AIN KADOUS""}",12,0
+4,56,"{""fr"":""CENTRE CULTUREL AZROU""}",12,0
+4,57,"{""fr"":""CENTRE CULTUREL EL HAJEB""}",12,0
+1,58,"{""fr"":""CENTRE CULTUREL SKHIRAT""}",12,0
+1,59,"{""fr"":""CENTRE CULTUREL TAMESNA""}",12,0
+1,60,"{""fr"":""CENTRE D ANIMATION CULTURELLE ET ARTISTIQUE  DE TABRIQUET""}",12,0
+16,61,"{""fr"":""CENTRE CULTUREL ZAGORA""}",12,0
+16,62,"{""fr"":""CENTRE CULTUREL KALAAT M GOUNA""}",12,0
+16,63,"{""fr"":""CENTRE CULTUREL OUARZAZTE""}",12,0
+6,66,"{""fr"":""CENTRE CULTUREL AIN HARROUDA CASABLANCA""}",9,0
+6,67,"{""fr"":""CENTRE CULTUREL BOUSKOURA""}",12,0
+6,68,"{""fr"":""CENTRE CULTUREL FIRDOUS""}",12,0
+8,69,"{""fr"":""Th\u00e9atre Afifi El-Jadida""}",30,0
+31,70,"{""fr"":""CENTRE CULTUREL BENIMELLAL""}",12,0
+31,71,"{""fr"":""CENTRE CULTUREL AZILAL""}",12,0
+18,72,"{""fr"":""MAISON DE LA CULTURE KAOUKI SAFI""}",12,0
+18,73,"{""fr"":""CITE DES ARTS SAFI""}",12,0
+30,74,"{""fr"":""CONSERVATOIRE DU MUSIQUE DAOUDIATE A MARRAKECH""}",12,0
+19,75,"{""fr"":""CENTRE CULTUREL SETTAT""}",12,0
+19,76,"{""fr"":""CENTRE CULTUREL BEN AHMED""}",22,0
+19,77,"{""fr"":""CENTRE CULTUREL BEN SLIMANE""}",12,0
+19,78,"{""fr"":""KASABAH ISMAILIA""}",12,0
+12,79,"{""fr"":""KASBAH MEHDIYA""}",,0
+12,80,"{""fr"":""SITE TAMUSIDA""}",12,0
+15,81,"{""fr"":""SITE MEZOURA""}",12,0
+11,82,"{""fr"":""SALLE DU CENTRE CULTUREL D EDUCATION CULTURELLE AIN KADOUS""}",12,0
+11,83,"{""fr"":""SALLE DU centre culturel hay al massira fes""}",12,0
+15,84,"{""fr"":""CENTRE CULTUREL BAB LEBHAR""}",12,0
+15,85,"{""fr"":""CONSERVATOIRE DU MUSIQUE DE LARACHE""}",,0
+15,86,"{""fr"":""SALLE DU CENTRE CULTUREL BAB LEBHAR""}",12,0
+15,87,"{""fr"":""CONSERVATOIRE DU MUSIQUE KSSAR LEKBIR""}",,0
+30,88,"{""fr"":""Conservatoire de Musique et d'art chor\u00e9graphique Bab Doukkala""}",,0
+15,89,"{""fr"":""Salle du centre culturel Larache""}",12,0
+15,90,"{""fr"":""Salle du centre culturel Lixus""}",12,0
+6,91,"{""fr"":""Conservatoire de Musique de Casablanca""}",,0
+31,92,"{""fr"":""Conservatoire de musique et arts chor\u00e9graphiques Mhamed Rouicha \u00e0 Kh\u00e9nifra""}",,0
+8,93,"{""fr"":""Kasbah de Boulaaouane""}",12,0
+22,94,"{""fr"":""L'Ecole des arts et m\u00e9tiers""}",12,0
+22,95,"{""fr"":""Le site arch\u00e9ologique de Tamuda""",,
+22,96,"{""fr"":""Conservatoire de Musique de T\u00e9touan""}",19,0
+22,97,"{""fr"":""SALLE DE LA MAISON DE CULTURE TETOAUN""}",12,0
+22,98,"{""fr"":""SALLE DE LA MAISON DE CULTURE M ' DIEQ""}",12,0
+22,99,"{""fr"":""SALLE DE LA MAISON DE CULTURE FNIDEQ""}",12,0

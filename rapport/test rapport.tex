@@ -1,0 +1,151 @@
+\documentclass[a4paper,12pt]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+
+\geometry{margin=2.5cm}
+
+\begin{document}
+	
+	%================= PAGE DE GARDE =================
+	\begin{titlepage}
+		\centering
+		
+		\vspace{1cm}
+		
+		\includegraphics[width=0.5\textwidth]{pics/ministre.png}
+		
+		\vspace{1cm}
+		
+		{\LARGE \textbf{Royaume du Maroc}}\\[0.3cm]
+		{\Large Ministère de la Jeunesse, de la Culture et de la Communication}\\[2cm]
+		
+		{\Huge \textbf{Rapport de Stage Technique}}\\[0.5cm]
+		
+		{\Large \textbf{Système Décisionnel pour l’analyse des données de billetterie}}\\[2cm]
+		
+		\begin{flushleft}
+			\textbf{Réalisé par :} Haytam OUBLAL\\
+			\textbf{Encadrant académique :} ................................\\
+			\textbf{Encadrant professionnel :} ................................\\
+		\end{flushleft}
+		
+		\vfill
+		
+		{\large Année universitaire : 2025 – 2026}
+		
+	\end{titlepage}
+	
+	%================= INTRODUCTION =================
+	\chapter*{Introduction générale}
+	
+	Le stage constitue une étape essentielle dans la formation des étudiants en ingénierie des données. Il permet de mettre en pratique les connaissances théoriques acquises et de découvrir le fonctionnement réel des systèmes d’information au sein des organisations.
+	
+	Dans ce cadre, j’ai effectué mon stage au sein du Ministère de la Jeunesse, de la Culture et de la Communication, dans le service informatique. Ce stage s’inscrit dans une démarche de valorisation des données issues des systèmes de billetterie des monuments historiques.
+	
+	L’objectif principal de ce projet est de concevoir une solution décisionnelle permettant d’exploiter efficacement ces données afin d’améliorer l’analyse et la prise de décision.
+	
+	\section*{Problématique}
+	
+	Dans le contexte de la gestion des monuments historiques, une grande quantité de données est générée quotidiennement à travers les systèmes de billetterie.
+	
+	Cependant, ces données sont souvent dispersées et difficiles à exploiter efficacement. Cette situation limite la capacité d’analyse et complique la prise de décision.
+	
+	Ainsi, la problématique principale est la suivante :
+	
+	\textbf{Comment exploiter efficacement les données de billetterie afin de faciliter leur analyse et améliorer la prise de décision ?}
+	
+	%================= CHAPITRE 1 =================
+	\chapter{Contexte du projet}
+	
+	%---------- 1.1 ----------
+	\section{Présentation de l’organisme d’accueil}
+	
+	%---------- 1.1.1 ----------
+	\subsection{Présentation du ministère}
+	
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{pics/ministre.png}
+		
+		\vspace{0.3cm}
+		\textbf{Figure 1.1} : Logo du Ministère de la Jeunesse, de la Culture et de la Communication
+	\end{center}
+	
+	Le Ministère de la Jeunesse, de la Culture et de la Communication est une institution publique relevant du secteur culturel. Il est chargé de la gestion, de la valorisation et de la protection du patrimoine culturel au Maroc.
+	
+	%---------- 1.1.2 ----------
+	\subsection{Missions du ministère}
+	
+	Les principales missions du ministère sont :
+	
+	\begin{itemize}
+		\item Préserver et valoriser le patrimoine culturel
+		\item Promouvoir les activités culturelles
+		\item Moderniser les services liés à la culture
+		\item Développer l’accès aux infrastructures culturelles
+	\end{itemize}
+	
+	%---------- 1.1.3 ----------
+	\subsection{Organisation du ministère}
+	
+	Le ministère est structuré en plusieurs départements, notamment la culture, la jeunesse et la communication. Chaque département comprend plusieurs services spécialisés.
+	
+	%---------- 1.1.4 ----------
+	\subsection{Organigramme}
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{pics/organigramme_ministere.png}
+		
+		\vspace{0.3cm}
+		\textbf{Figure 1.2} : Organigramme simplifié du ministère
+	\end{center}
+	
+	%---------- 1.1.5 ----------
+	\subsection{Service informatique et cadre du stage}
+	
+	Le stage s’est déroulé au sein du service informatique, responsable de la gestion des systèmes d’information et des données.
+	
+	Le projet réalisé consiste à exploiter les données de billetterie afin de mettre en place un système décisionnel.
+	
+	%================= 1.2 =================
+	\section{Présentation et analyse des données}
+	
+	\subsection{Source des données}
+	
+	Les données utilisées proviennent d’un système de gestion de billetterie des monuments historiques. Elles sont stockées dans une base de données relationnelle.
+	
+	%---------- TABLE places ----------
+	\subsection{Description des tables principales}
+	
+	\subsubsection{Table places}
+	
+	\paragraph{Description générale}
+	
+	La table \textit{places} contient les informations relatives aux monuments.
+	
+	\paragraph{Champs principaux}
+	
+	\begin{itemize}
+		\item id
+		\item title
+		\item regie\_id
+		\item city\_id
+		\item is\_ticketing
+	\end{itemize}
+	
+	\vspace{0.5cm}
+	
+	\noindent\includegraphics[width=0.7\textwidth]{pics/2_places_table.png}
+	
+	\vspace{0.3cm}
+	\textbf{Figure 1.3} : Structure de la table places
+	
+	\paragraph{Rôle dans le projet}
+	
+	Cette table permet d’analyser les performances des monuments et leur fréquentation.
+	
+\end{document}

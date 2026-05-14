@@ -1,0 +1,1122 @@
+\documentclass[12pt,a4paper]{report}
+
+
+% ================= PACKAGES =================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+
+% ================= PAGE GEOMETRY =================
+\geometry{
+	a4paper,
+	left=2.5cm,
+	right=2.5cm,
+	top=2.5cm,
+	bottom=2.5cm
+}
+
+\onehalfspacing
+\setlength{\parskip}{0.3em}
+\setlength{\parindent}{0pt}
+
+% ================= HEADER / FOOTER =================
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead{}
+\fancyfoot[L]{\small 2025--2026}
+\fancyfoot[C]{\small \thepage}
+\fancyfoot[R]{\small OUBLAL Haytam}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% ================= CHAPTER STYLE =================
+\titleformat{\chapter}[display]
+{\normalfont\bfseries\Large}
+{\centering CHAPITRE \thechapter}
+{0.5cm}
+{\centering\Huge}
+[\vspace{0.3cm}\titlerule]
+
+% ================= SECTION STYLE =================
+\titleformat{\section}
+{\normalfont\bfseries\Large}
+{\thesection}{1em}{}
+
+\titleformat{\subsection}
+{\normalfont\bfseries\large}
+{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\normalfont\bfseries\normalsize}
+{\thesubsubsection}{1em}{}
+
+\begin{document}
+	
+	% ================= PAGE DE GARDE =================
+	\begin{titlepage}
+		\centering
+		
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			\includegraphics[width=0.9\textwidth]{logo.jpg}
+		\end{minipage}
+		\hfill
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			\includegraphics[width=0.9\textwidth]{ministre.png}
+		\end{minipage}
+		
+		\vspace{1.5cm}
+		
+		{\large \textbf{École Supérieure de Technologie de Ouarzazate}}\\[0.3cm]
+		{\large \textbf{Filière : Data Engineering}}\\[1.5cm]
+		
+		{\Huge \textbf{Rapport de stage}}\\[0.7cm]
+		
+		{\large
+			effectué au sein du Ministère de la Jeunesse, de la Culture et de la Communication
+		}\\[1.5cm]
+		
+		\rule{\textwidth}{0.8pt}\\[0.4cm]
+		{\LARGE \textbf{Conception d’un système décisionnel pour l’analyse de la billetterie des monuments historiques}}\\[0.4cm]
+		\rule{\textwidth}{0.8pt}\\[1.5cm]
+		
+		\begin{flushleft}
+			\renewcommand{\arraystretch}{1.5}
+			\begin{tabular}{p{6cm} p{8cm}}
+				\textbf{Réalisé par :} & OUBLAL Haytam \\
+				\textbf{Encadrante à l’école :} & OUIDRINE Fatima \\
+				\textbf{Encadrant au ministère :} & BELHADJ Khalid \\
+			\end{tabular}
+		\end{flushleft}
+		
+		\vfill
+		
+		\begin{center}
+			{\large \textbf{Période de stage :}}\\
+			Du 1er avril au 30 mai 2026\\[0.5cm]
+			
+			{\large Année Universitaire : 2025--2026}
+		\end{center}
+		
+	\end{titlepage}
+	
+	% ================= PAGE VIDE =================
+	\newpage
+	\thispagestyle{empty}
+	\mbox{}
+	\newpage
+	
+	\pagestyle{fancy}
+	
+	% ================= REMERCIEMENTS =================
+	\chapter*{Remerciements}
+	\addcontentsline{toc}{chapter}{Remerciements}
+	
+	\vspace{1cm}
+	
+	% à remplir plus tard
+	
+	\newpage
+	
+	% ================= RÉSUMÉ =================
+	\chapter*{Résumé}
+	\addcontentsline{toc}{chapter}{Résumé}
+	
+	\vspace{1cm}
+	
+	% à remplir plus tard
+	
+	\newpage
+	
+	% ================= ABSTRACT =================
+	\chapter*{Abstract}
+	\addcontentsline{toc}{chapter}{Abstract}
+	
+	\vspace{1cm}
+	
+	% to be completed later
+	
+	\newpage
+	
+	% ================= TABLE DES MATIÈRES =================
+	\tableofcontents
+	\newpage
+	
+	% ================= TABLE DES FIGURES =================
+	\listoffigures
+	\newpage
+	
+	% ================= INTRODUCTION GÉNÉRALE =================
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+
+Aujourd’hui, avec le développement rapide des technologies et la transformation digitale, les données occupent une place de plus en plus importante dans les organisations. Elles constituent une ressource essentielle permettant de mieux comprendre les activités, d’analyser les performances et d’améliorer la prise de décision. Dans un environnement de plus en plus concurrentiel, la capacité à exploiter efficacement les données devient un facteur clé de réussite.
+
+Dans le domaine culturel, et plus particulièrement dans la gestion des monuments historiques, les systèmes de billetterie produisent quotidiennement un volume important de données. Ces données concernent notamment les ventes de tickets, les recettes générées, les types de billets ainsi que la fréquentation des différents sites. Elles représentent une source d’information précieuse pour les responsables, car elles permettent d’évaluer la performance des monuments, d’identifier les périodes de forte affluence et de mieux comprendre le comportement des visiteurs.
+
+Cependant, ces données ne sont pas toujours faciles à exploiter. Elles sont souvent dispersées dans différentes sources telles que les bases de données opérationnelles, les fichiers CSV ou encore les outils de gestion interne. Cette dispersion rend l’analyse difficile et limite la capacité des décideurs à obtenir une vision globale et cohérente de l’activité. De plus, les données peuvent contenir des incohérences, des valeurs manquantes ou des problèmes d’encodage, ce qui complique davantage leur utilisation.
+
+Dans ce contexte, il devient essentiel de mettre en place une solution permettant de centraliser, nettoyer et structurer ces données. Les systèmes décisionnels, également appelés systèmes d’aide à la décision, répondent à ce besoin. Ils permettent de regrouper les données provenant de différentes sources, de les organiser dans un Data Warehouse et de les analyser à l’aide d’outils adaptés. Grâce à ces systèmes, il devient possible de transformer les données brutes en informations pertinentes, facilitant ainsi la prise de décision stratégique.
+
+C’est dans ce cadre que s’inscrit ce projet de stage, intitulé \textbf{Conception d’un système décisionnel pour l’analyse de la billetterie des monuments historiques}. L’objectif principal de ce projet est de concevoir et de mettre en œuvre une solution décisionnelle permettant de centraliser et d’analyser les données de billetterie afin de produire des indicateurs de performance fiables et pertinents.
+
+Pour atteindre cet objectif, une démarche structurée a été adoptée. Dans un premier temps, une analyse des données disponibles a été réalisée afin de comprendre leur structure, leur contenu et les relations existantes entre les différentes tables. Cette étape a permis d’identifier les données pertinentes à intégrer dans le système décisionnel.
+
+Ensuite, une modélisation du Data Warehouse a été effectuée en utilisant un schéma en étoile. Ce modèle permet d’organiser les données autour d’une table de faits, représentant les transactions, et de plusieurs tables de dimensions, représentant les axes d’analyse. Cette organisation facilite les requêtes analytiques et améliore les performances lors de l’exploitation des données.
+
+Par la suite, un processus ETL (Extraction, Transformation, Chargement) a été mis en place à l’aide de l’outil Talend Open Studio. Cette étape consiste à extraire les données depuis les sources, à les transformer en corrigeant les incohérences et en nettoyant les valeurs, puis à les charger dans un format structuré et exploitable. Le processus ETL joue un rôle essentiel dans la qualité des données, car il garantit leur fiabilité et leur cohérence.
+
+Enfin, les données préparées seront utilisées dans un outil de visualisation, en l’occurrence Power BI, afin de créer des tableaux de bord interactifs. Ces tableaux de bord permettront de suivre les indicateurs de performance, d’analyser les recettes, de comparer les performances des monuments et d’identifier les tendances importantes.
+
+Les principaux outils utilisés dans ce projet sont MySQL pour la gestion des données sources, Talend Open Studio pour le processus ETL, ainsi que Power BI pour la visualisation des données.
+
+Ainsi, la problématique principale de ce projet peut être formulée comme suit : \textbf{comment exploiter efficacement les données de billetterie des monuments historiques afin d’améliorer leur analyse et de faciliter la prise de décision ?}
+
+Ce rapport est structuré en plusieurs chapitres. Le premier chapitre présente le contexte du projet ainsi que l’analyse des données. Le deuxième chapitre est consacré à la conception du système décisionnel et à la modélisation du Data Warehouse. Le troisième chapitre décrit l’implémentation du processus ETL et les transformations appliquées aux données. Enfin, une dernière partie est dédiée à l’analyse des résultats et à la visualisation des données à travers des tableaux de bord interactifs.
+	% ================= CHAPITRE 1 =================
+
+	\chapter{Contexte du projet}
+	\section*{Introduction}
+	\addcontentsline{toc}{section}{Introduction}
+	
+	Ce chapitre a pour objectif de présenter le contexte général du projet ainsi que l’environnement dans lequel le stage a été réalisé. Il permet d’introduire l’organisme d’accueil, de décrire son rôle dans le domaine culturel et de situer le cadre dans lequel s’inscrit le projet.
+	
+	Dans un second temps, ce chapitre met l’accent sur l’analyse des données utilisées. Cette analyse permet de comprendre la structure des données disponibles, d’identifier les principales tables exploitées et de mettre en évidence leurs relations. Elle permet également de détecter certaines limites des données, notamment la présence de valeurs manquantes ou d’incohérences.
+	
+	Enfin, cette étape constitue une base essentielle pour la suite du projet, notamment pour la conception du modèle décisionnel et la mise en place du processus ETL.
+	\vspace{-0.5cm}
+	
+	\section{Présentation de l’organisme d’accueil}
+	
+	\subsection{Présentation du ministère}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{ministre.png}
+		\caption{Logo du Ministère de la Jeunesse, de la Culture et de la Communication}
+	\end{figure}
+	
+	Le stage a été effectué au sein du Ministère de la Jeunesse, de la Culture et de la Communication	% ================= % ================= INTRODUCTION GÉNÉRALE =================
+	\chapter*{Introduction}
+	\addcontentsline{toc}{chapter}{Introduction}
+	
+	Avec la transformation digitale et l’évolution des systèmes d’information, les organisations produisent quotidiennement un volume important de données. Ces données représentent une ressource stratégique permettant d’améliorer le suivi des activités, d’analyser les performances et de faciliter la prise de décision.
+	
+	Dans le domaine culturel, les systèmes de gestion et de billetterie des monuments historiques génèrent de nombreuses données liées aux transactions, aux recettes, aux tickets ainsi qu’aux sites culturels. Ces données constituent une source importante d’informations permettant d’évaluer les performances des monuments, de suivre les recettes et d’identifier les tendances de fréquentation.
+	
+	Cependant, les données issues des systèmes opérationnels sont généralement dispersées dans plusieurs tables et structures techniques destinées principalement à la gestion quotidienne et non à l’analyse décisionnelle. Cette organisation rend difficile l’obtention d’une vision globale et cohérente des activités.
+	
+	Dans ce contexte, la mise en place d’un système décisionnel devient essentielle. Ce type de système permet de centraliser les données provenant des différentes sources, de les transformer et de les structurer dans un Data Warehouse afin de faciliter leur exploitation analytique.
+	
+	C’est dans ce cadre que s’inscrit ce projet de stage intitulé :
+	
+	\begin{center}
+		\textbf{\Large Conception d’un système décisionnel pour l’analyse de la billetterie des monuments historiques}
+	\end{center}
+	
+	L’objectif principal de ce projet est de concevoir une solution décisionnelle permettant d’exploiter efficacement les données de billetterie et de recettes afin de produire des indicateurs de performance fiables et pertinents.
+	
+	Pour atteindre cet objectif, plusieurs étapes ont été réalisées :
+	
+	\begin{itemize}
+		\item analyse et compréhension des données sources ;
+		\item identification des tables pertinentes ;
+		\item conception d’un modèle décisionnel en schéma en étoile ;
+		\item mise en place d’un processus ETL avec Talend Open Studio ;
+		\item création de tableaux de bord interactifs avec Power BI.
+	\end{itemize}
+	
+	Dans ce projet, deux axes principaux d’analyse ont été retenus :
+	
+	\begin{itemize}
+		\item l’analyse des recettes à partir de la table \textit{recettes} ;
+		\item l’analyse des transactions de billetterie à partir des tables \textit{ticketing\_commands} et \textit{ticketing\_command\_lines}.
+	\end{itemize}
+	
+	Le modèle décisionnel permet ainsi d’analyser les revenus selon plusieurs dimensions telles que les monuments, les régies, les types de revenus et les périodes temporelles.
+	
+	Les principaux outils utilisés dans ce projet sont :
+	
+	\begin{itemize}
+		\item \textbf{MySQL} pour la gestion des données sources ;
+		\item \textbf{Talend Open Studio} pour le processus ETL ;
+		\item \textbf{Power BI} pour la modélisation et la visualisation des données.
+	\end{itemize}
+	
+	Ainsi, la problématique principale de ce projet peut être formulée comme suit :
+	
+	\begin{center}
+		\textbf{Comment exploiter efficacement les données de billetterie et de recettes des monuments historiques afin d’améliorer l’analyse et d’aider à la prise de décision ?}
+	\end{center}
+	
+	Ce rapport est organisé en plusieurs chapitres. Le premier chapitre présente le contexte du projet ainsi que l’analyse des données sources. Le deuxième chapitre est consacré à la conception du système décisionnel et à la modélisation du Data Warehouse. Le troisième chapitre présente l’implémentation du processus ETL. Enfin, le dernier chapitre est dédié à l’analyse des données et à la visualisation des indicateurs de performance à l’aide de Power BI.
+	
+	% ================= CHAPITRE 1 =================
+	
+	\chapter{Contexte du projet}
+	
+	\section*{Introduction}
+	\addcontentsline{toc}{section}{Introduction}
+	
+	Ce chapitre présente le contexte général du projet ainsi que l’environnement dans lequel le stage a été réalisé. Il introduit également l’analyse des données utilisées dans le cadre du système décisionnel.
+	
+	L’objectif principal de cette étape est de comprendre la structure des données disponibles, d’identifier les tables les plus pertinentes et d’analyser les relations existantes entre elles afin de préparer la conception du Data Warehouse.
+	
+	%--------------------------------------------------
+	
+	\section{Présentation de l’organisme d’accueil}
+	
+	\subsection{Présentation du ministère}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{ministre.png}
+		\caption{Logo du Ministère de la Jeunesse, de la Culture et de la Communication}
+	\end{figure}
+	
+	Le stage a été réalisé au sein du Ministère de la Jeunesse, de la Culture et de la Communication. Cette institution publique joue un rôle important dans la gestion et la valorisation du patrimoine culturel marocain.
+	
+	Le ministère assure plusieurs missions liées à la protection des monuments historiques, à la promotion des activités culturelles et à la modernisation des services destinés au public.
+	
+	Dans ce cadre, les systèmes d’information occupent une place essentielle, notamment pour la gestion des données générées par les activités de billetterie et des recettes.
+	
+	%--------------------------------------------------
+	
+	\subsection{Cadre du stage}
+	
+	Le stage a été effectué au niveau du service informatique, chargé de la gestion des systèmes d’information et de l’exploitation des données.
+	
+	Le projet réalisé consiste à concevoir un système décisionnel permettant d’analyser les données de billetterie et les recettes générées par les monuments historiques.
+	
+	Ce projet permet d’exploiter les données disponibles afin de produire des indicateurs de performance facilitant la prise de décision.
+	
+	%--------------------------------------------------
+	
+	\section{Analyse des données}
+	
+	\subsection{Présentation des données sources}
+	
+	Les données utilisées dans ce projet proviennent d’une base de données relationnelle dédiée à la gestion de la billetterie des monuments historiques.
+	
+	Cette base contient plusieurs tables permettant de gérer :
+	
+	\begin{itemize}
+		\item les monuments historiques ;
+		\item les régies de gestion ;
+		\item les recettes ;
+		\item les transactions de billetterie ;
+		\item les tickets ;
+		\item les types de revenus.
+	\end{itemize}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{pics/1_tables_source.png}
+		\caption{Principales tables de la base de données}
+	\end{figure}
+	
+	%--------------------------------------------------
+	
+	\subsection{Tables retenues pour l’analyse}
+	
+	Après analyse de la base de données, plusieurs tables ont été retenues pour la construction du système décisionnel.
+	
+	\subsubsection{Table \textit{places}}
+	
+	La table \textit{places} contient les informations relatives aux monuments historiques.
+	
+	Les principaux champs utilisés sont :
+	
+	\begin{itemize}
+		\item \textit{id}
+		\item \textit{title}
+		\item \textit{regie\_id}
+		\item \textit{city\_id}
+		\item \textit{is\_ticketing}
+	\end{itemize}
+	
+	Cette table constitue une dimension importante du modèle décisionnel.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{pics/places_structure.png}
+		\caption{Structure de la table \textit{places}}
+	\end{figure}
+	
+	%--------------------------------------------------
+	
+	\subsubsection{Table \textit{regies}}
+	
+	La table \textit{regies} contient les informations relatives aux entités de gestion des monuments historiques.
+	
+	Les principaux champs exploités sont :
+	
+	\begin{itemize}
+		\item \textit{id}
+		\item \textit{title}
+		\item \textit{city\_id}
+		\item \textit{code}
+	\end{itemize}
+	
+	Cette table permet d’effectuer des analyses organisationnelles selon les régies responsables des monuments.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{pics/regies_structure.png}
+		\caption{Structure de la table \textit{regies}}
+	\end{figure}
+	
+	%--------------------------------------------------
+	
+	\subsubsection{Table \textit{revenue\_types}}
+	
+	La table \textit{revenue\_types} contient les différentes catégories de revenus générés par les monuments historiques.
+	
+	Les principaux champs sont :
+	
+	\begin{itemize}
+		\item \textit{id}
+		\item \textit{title}
+		\item \textit{revenue\_category\_id}
+	\end{itemize}
+	
+	Elle permet de classifier les recettes selon leur nature.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.75\textwidth]{pics/revenue_types_structure.png}
+		\caption{Structure de la table \textit{revenue\_types}}
+	\end{figure}
+	
+	%--------------------------------------------------
+	
+	\subsubsection{Table \textit{recettes}}
+	
+	La table \textit{recettes} contient les informations relatives aux recettes financières générées par les monuments historiques.
+	
+	Les principaux champs utilisés sont :
+	
+	\begin{itemize}
+		\item \textit{id}
+		\item \textit{revenue\_type\_id}
+		\item \textit{place\_id}
+		\item \textit{date\_versement}
+		\item \textit{amount}
+	\end{itemize}
+	
+	Cette table représente une table de faits financière permettant d’analyser les recettes selon plusieurs dimensions.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.85\textwidth]{pics/recettes_structure.png}
+		\caption{Structure de la table \textit{recettes}}
+	\end{figure}
+	
+	%--------------------------------------------------
+	
+	\subsubsection{Table \textit{ticketing\_commands}}
+	
+	La table \textit{ticketing\_commands} contient les informations générales relatives aux commandes de billetterie.
+	
+	Les principaux champs utilisés sont :
+	
+	\begin{itemize}
+		\item \textit{id}
+		\item \textit{created\_at}
+		\item \textit{amount}
+		\item \textit{status}
+		\item \textit{place\_id}
+	\end{itemize}
+	
+	Cette table permet d’analyser les transactions globales effectuées au niveau des monuments.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{pics/ticketing_commands_structure.png}
+		\caption{Structure de la table \textit{ticketing\_commands}}
+	\end{figure}
+	
+	%--------------------------------------------------
+	
+	\subsubsection{Table \textit{ticketing\_command\_lines}}
+	
+	La table \textit{ticketing\_command\_lines} contient les détails des lignes de commandes de tickets.
+	
+	Les principaux champs exploités sont :
+	
+	\begin{itemize}
+		\item \textit{ticketing\_command\_id}
+		\item \textit{ticket\_type\_id}
+		\item \textit{quantity}
+		\item \textit{amount}
+	\end{itemize}
+	
+	Cette table permet d’analyser le détail des ventes de tickets.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{pics/ticketing_command_lines_structure.png}
+		\caption{Structure de la table \textit{ticketing\_command\_lines}}
+	\end{figure}
+	
+	%--------------------------------------------------
+	
+	\subsection{Relations entre les tables}
+	
+	Les différentes tables retenues sont reliées entre elles afin de construire un modèle cohérent pour l’analyse décisionnelle.
+	
+	Les principales relations sont les suivantes :
+	
+	\begin{itemize}
+		\item \textit{recettes.place\_id} lié à \textit{places.id}
+		\item \textit{recettes.revenue\_type\_id} lié à \textit{revenue\_types.id}
+		\item \textit{places.regie\_id} lié à \textit{regies.id}
+		\item \textit{ticketing\_commands.place\_id} lié à \textit{places.id}
+		\item \textit{ticketing\_command\_lines.ticketing\_command\_id} lié à \textit{ticketing\_commands.id}
+	\end{itemize}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{pics/schema_relations.png}
+		\caption{Relations principales entre les tables}
+	\end{figure}
+	
+	%--------------------------------------------------
+	
+	\section*{Conclusion}
+	\addcontentsline{toc}{section}{Conclusion}
+	
+	Ce chapitre a permis de présenter le contexte général du projet ainsi que les principales données utilisées dans le système décisionnel.
+	
+	L’analyse des tables a permis d’identifier les données les plus pertinentes pour l’étude des recettes et des transactions de billetterie.
+	
+	Les relations entre les différentes tables constituent une base essentielle pour la conception du modèle décisionnel et la mise en place du Data Warehouse.
+	
+	% ================= CHAPITRE 2 =================
+\chapter{Conception du système décisionnel}
+
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+Ce chapitre présente la conception du système décisionnel mis en place dans le cadre de ce projet. Il a pour objectif de définir l’architecture globale de la solution ainsi que le modèle de données utilisé pour l’analyse.
+
+Dans un premier temps, l’architecture décisionnelle est décrite afin de situer les différents composants du système, notamment les sources de données, le processus ETL, le Data Warehouse et les outils de visualisation.
+
+Ensuite, une modélisation du Data Warehouse est proposée en utilisant un schéma en étoile. Ce modèle permet d’organiser les données de manière structurée, en distinguant la table de faits des tables de dimensions.
+
+Enfin, le principe du processus ETL est présenté, ainsi que les outils utilisés pour la mise en œuvre de la solution décisionnelle.
+
+%--------------------------------------------------
+
+\section{Architecture décisionnelle}
+
+\subsection{Architecture globale}
+
+Le système décisionnel est une solution permettant de collecter, organiser et analyser les données afin d’aider à la prise de décision.
+
+Dans le cadre de ce projet, il est nécessaire de transformer les données issues du système de billetterie en informations exploitables.
+
+Un système décisionnel repose généralement sur plusieurs composants :
+
+\begin{itemize}
+	\item les sources de données (base MySQL, fichiers CSV, etc.) ;
+	\item le processus ETL (extraction, transformation, chargement) ;
+	\item le Data Warehouse (stockage structuré des données) ;
+	\item les outils de visualisation (Power BI).
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{pics/7_architecture_decisionnelle.png}
+	\caption{Architecture globale du système décisionnel}
+\end{figure}
+
+Cette architecture permet de transformer les données brutes en informations exploitables, facilitant ainsi l’analyse et la prise de décision.
+
+%--------------------------------------------------
+
+\section{Modélisation du Data Warehouse}
+
+Dans le cadre de ce projet, un modèle décisionnel a été conçu afin d’optimiser l’analyse des données de billetterie. Ce modèle repose sur une organisation structurée des données permettant une exploitation efficace.
+
+\subsection{Principe du schéma en étoile}
+
+Le schéma en étoile est un modèle de conception largement utilisé dans les systèmes décisionnels. Il se compose d’une table centrale appelée \textbf{table de faits}, entourée de plusieurs tables appelées \textbf{tables de dimensions}.
+
+La table de faits contient les données quantitatives issues des transactions, tandis que les tables de dimensions apportent un contexte permettant d’analyser ces données selon différents axes tels que le lieu, le type de recette ou l’entité de gestion.
+
+Le choix du schéma en étoile se justifie par sa simplicité et son efficacité pour les analyses décisionnelles. Il permet de faciliter les requêtes, d’améliorer les performances et de rendre le modèle plus compréhensible.
+
+%--------------------------------------------------
+
+\subsection{Table de faits}
+
+La table de faits principale de ce modèle est la table \textbf{recettes}. Elle regroupe l’ensemble des transactions effectuées dans le système de billetterie.
+
+Cette table a été choisie comme table de faits car elle contient les mesures principales du projet, notamment les montants des transactions (\textit{amount}), qui représentent les indicateurs clés pour l’analyse.
+
+Elle contient également des informations temporelles telles que \textit{date\_versement} et \textit{created\_at}, permettant d’analyser l’évolution des recettes dans le temps.
+
+Chaque enregistrement représente une opération financière, ce qui en fait le cœur du système décisionnel.
+
+De plus, cette table est reliée aux différentes dimensions via des clés étrangères telles que \textit{place\_id} et \textit{revenue\_type\_id}, permettant ainsi une analyse multidimensionnelle.
+
+%--------------------------------------------------
+
+\subsection{Tables de dimensions}
+
+Les tables de dimensions permettent d’enrichir les données de la table de faits en apportant un contexte d’analyse.
+
+Dans ce modèle, les principales dimensions sont :
+
+\begin{itemize}
+	
+	\item \textbf{Dimension des lieux (places)} :  
+	Elle contient les informations relatives aux différents monuments et permet d’identifier l’origine des transactions. Elle joue un rôle essentiel dans l’analyse des performances des sites culturels.
+	
+	\item \textbf{Dimension des régies (regies)} :  
+	Elle regroupe les informations concernant les entités de gestion et permet une analyse organisationnelle des données.
+	
+	\item \textbf{Dimension des types de recettes (revenue\_types)} :  
+	Elle permet de classifier les transactions selon leur nature, facilitant ainsi une analyse plus détaillée des sources de revenus.
+	
+\end{itemize}
+
+Il est important de noter que la dimension \textbf{regies} est liée indirectement à la table de faits via la dimension \textbf{places}. Cette organisation permet d’éviter la redondance des données et d’assurer une meilleure cohérence du modèle.
+
+%--------------------------------------------------
+
+\subsection{Schéma global du Data Warehouse}
+
+Le schéma en étoile mis en place permet de représenter de manière claire les relations entre la table de faits et les différentes dimensions.
+
+Dans ce modèle, la table \textbf{recettes} constitue la table centrale, entourée des tables de dimensions \textbf{places}, \textbf{regies} et \textbf{revenue\_types}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{pics/9_star_schema_powerbi.png}
+	\caption{Schéma en étoile du Data Warehouse réalisé avec Power BI}
+\end{figure}
+
+Ce modèle facilite l’analyse multidimensionnelle et constitue une base solide pour la création des indicateurs de performance (KPI) et des tableaux de bord.
+
+%--------------------------------------------------
+
+\section{Principe du processus ETL}
+
+Le processus ETL (\textit{Extract, Transform, Load}) constitue une étape essentielle dans la mise en place d’un système décisionnel. Il permet d’extraire les données depuis la source, de les transformer afin d’améliorer leur qualité, puis de les charger dans un Data Warehouse.
+
+Dans ce projet, le processus ETL permet de garantir la cohérence, la qualité et la structuration des données avant leur exploitation analytique.
+
+\subsection{Extraction des données}
+
+L’extraction consiste à récupérer les données depuis la base source de billetterie. Les principales tables retenues sont \textbf{places}, \textbf{regies}, \textbf{recettes} et \textbf{revenue\_types}.
+
+\subsection{Transformation des données}
+
+La transformation regroupe les opérations de préparation des données, notamment :
+
+\begin{itemize}
+	\item la sélection des attributs utiles ;
+	\item l’harmonisation des formats ;
+	\item la gestion des valeurs manquantes ;
+	\item la structuration des données selon le modèle décisionnel.
+\end{itemize}
+
+Cette étape est essentielle pour garantir la qualité des données et assurer la fiabilité des analyses.
+
+\subsection{Chargement des données}
+
+Le chargement consiste à intégrer les données préparées dans le Data Warehouse afin de permettre leur exploitation dans les outils d’analyse et de visualisation.
+
+%--------------------------------------------------
+
+\section{Outils utilisés}
+
+La réalisation de ce projet s’appuie sur plusieurs outils complémentaires :
+
+\begin{itemize}
+	\item \textbf{MySQL} : utilisé pour la gestion des données sources ;
+	\item \textbf{Talend Open Studio} : utilisé pour la mise en œuvre du processus ETL ;
+	\item \textbf{Power BI} : utilisé pour la modélisation des données et la création des tableaux de bord.
+\end{itemize}
+
+%--------------------------------------------------
+
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
+
+Ce chapitre a permis de présenter la conception du système décisionnel adopté dans ce projet. L’architecture globale a été définie en identifiant les différents composants nécessaires à la collecte, au traitement et à l’analyse des données.
+
+La modélisation du Data Warehouse a été réalisée à l’aide d’un schéma en étoile, mettant en évidence la table de faits \textit{recettes} et les différentes tables de dimensions telles que \textit{places}, \textit{regies} et \textit{revenue\_types}. Ce modèle permet de faciliter l’analyse des données selon plusieurs axes.
+
+Par ailleurs, le rôle du processus ETL a été présenté, en soulignant son importance dans la préparation, le nettoyage et la structuration des données avant leur exploitation.
+
+Ainsi, ce chapitre constitue une étape essentielle dans la mise en place du système décisionnel et prépare le terrain pour l’implémentation du processus ETL, qui sera détaillée dans le chapitre suivant.
+\chapter{Implémentation du processus ETL}
+
+\section{Introduction}
+
+Après la phase de conception du système décisionnel, cette partie présente la mise en œuvre pratique du processus ETL. L’objectif est de préparer les données extraites depuis la base MySQL afin de les rendre propres, structurées et exploitables pour la construction du Data Warehouse.
+
+Le processus ETL signifie \textit{Extract, Transform, Load}. Il se compose de trois étapes principales :
+\begin{itemize}
+	\item \textbf{Extraction} : récupération des données depuis les fichiers sources ;
+	\item \textbf{Transformation} : nettoyage, correction et structuration des données ;
+	\item \textbf{Chargement} : export des données transformées vers des fichiers propres prêts à être utilisés.
+\end{itemize}
+
+Dans ce projet, l’outil \textbf{Talend Open Studio} a été utilisé pour réaliser les différentes étapes du processus ETL. Les données sources ont été exportées depuis MySQL sous forme de fichiers CSV, puis importées dans Talend pour être traitées.
+
+\section{Implémentation du processus ETL}
+
+\subsection{Présentation de l’environnement de travail}
+
+Le flux ETL mis en place repose sur les composants suivants :
+
+\begin{itemize}
+	\item \texttt{tFileInputDelimited} : utilisé pour lire les fichiers CSV sources ;
+	\item \texttt{tMap} : utilisé pour appliquer les transformations nécessaires ;
+	\item \texttt{tFileOutputDelimited} : utilisé pour générer les fichiers CSV propres après traitement.
+\end{itemize}
+
+Chaque table a été traitée séparément afin de mieux contrôler la qualité des données et d’adapter les transformations selon la nature de chaque fichier.
+
+%--------------------------------------------------
+
+\section{Processus ETL des données \textit{revenue\_types}}
+
+\subsection{Extraction des données}
+
+Les données de la table \textit{revenue\_types} ont été extraites depuis la base de données MySQL et exportées sous forme de fichier CSV.
+
+Ce fichier contient les types de revenus utilisés pour catégoriser les recettes. Il constitue une dimension importante dans le modèle décisionnel.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{pics/revenue_types_csv_raw.png}
+	\caption{Fichier CSV brut extrait depuis MySQL (revenue\_types)}
+\end{figure}
+
+\subsection{Transformation des données}
+
+La transformation a été réalisée à l’aide du composant \texttt{tMap}. Cette étape a permis de nettoyer les champs texte et de gérer certaines valeurs manquantes.
+
+Avant transformation, certaines données pouvaient contenir des caractères inutiles ou des champs vides, notamment dans la colonne \texttt{revenue\_category\_id}. Pour éviter les erreurs lors du traitement, les champs ont été traités comme des chaînes de caractères (\texttt{String}) dans Talend.
+
+Les principales opérations réalisées sont :
+\begin{itemize}
+	\item suppression des caractères inutiles ;
+	\item suppression des espaces avec la fonction \texttt{trim()} ;
+	\item gestion des valeurs manquantes ;
+	\item attribution d’une valeur par défaut \texttt{0} pour \texttt{revenue\_category\_id}.
+\end{itemize}
+
+Après transformation, les données deviennent mieux structurées et prêtes à être utilisées comme dimension dans le Data Warehouse.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{pics/tmap_revenue_types_transformation.png}
+	\caption{Transformation des données avec le composant tMap}
+\end{figure}
+
+\subsection{Chargement des données}
+
+Après transformation, les données ont été exportées dans un nouveau fichier CSV propre à l’aide du composant \texttt{tFileOutputDelimited}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{pics/etl_revenue_types_success.png}
+	\caption{Exécution du job ETL dans Talend}
+\end{figure}
+
+\subsection{Résultat final}
+
+Le fichier final contient les colonnes suivantes :
+
+\begin{itemize}
+	\item \texttt{id}
+	\item \texttt{title}
+	\item \texttt{revenue\_category\_id}
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{pics/etl_revenue_types_with_header.png}
+	\caption{Résultat final après transformation des données}
+\end{figure}
+
+Les données obtenues sont propres, cohérentes et adaptées à une utilisation dans le modèle décisionnel.
+
+%--------------------------------------------------
+
+\section{Processus ETL des données \textit{places}}
+
+\subsection{Extraction des données}
+
+Les données de la table \textit{places} ont été extraites depuis MySQL sous forme de fichier CSV. Cette table contient les informations relatives aux monuments, notamment l’identifiant, le nom du monument, la régie associée, la ville et l’état de billetterie.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{pics/places_source_csv.png}
+	\caption{Données sources de la table \textit{places} avant transformation}
+\end{figure}
+
+\subsection{Transformation des données}
+
+Dans le fichier source, la colonne \texttt{title} contenait des valeurs sous forme JSON, par exemple \texttt{\{"fr":"..."\}}. Cette structure n’est pas directement adaptée à l’analyse dans un Data Warehouse, car elle contient des éléments techniques inutiles.
+
+L’objectif de la transformation était donc d’extraire uniquement le nom du monument en français et de corriger certains caractères encodés.
+
+L’expression Java utilisée dans le composant \texttt{tMap} est la suivante :
+
+\begin{verbatim}
+	row1.title == null ? "" : row1.title.replace("{\"fr\":\"", "")
+		.replace("\"}", "").replace("\\u00e9", "é")
+	.replace("\\u00e0", "à").replace("\\u00e8", "è")
+	.replace("\\u00f4", "ô").replace("\\u00e2", "â")
+	.replace("\\u00ee", "î").replace("\\u00f9", "ù")
+	.replace("\\u00e7", "ç").trim()
+\end{verbatim}
+
+Cette expression permet de :
+\begin{itemize}
+	\item vérifier si la valeur de \texttt{title} est nulle ;
+	\item supprimer la structure JSON \texttt{\{"fr":"..."\}} ;
+	\item corriger certains caractères encodés ;
+	\item supprimer les espaces inutiles avec \texttt{trim()}.
+\end{itemize}
+
+Ainsi, une valeur comme \texttt{\{"fr":"Salle de th\textbackslash u00e9âtre"\}} devient une valeur lisible comme \texttt{Salle de théâtre}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{pics/etl_places_tmap_transformation.png}
+	\caption{Transformation de la table \textit{places} avec le composant tMap}
+\end{figure}
+
+\subsection{Chargement des données}
+
+Après transformation, les données nettoyées ont été exportées vers un nouveau fichier CSV à l’aide du composant \texttt{tFileOutputDelimited}.
+
+Le fichier final contient les colonnes suivantes :
+\begin{itemize}
+	\item \texttt{regie\_id}
+	\item \texttt{id}
+	\item \texttt{title}
+	\item \texttt{city\_id}
+	\item \texttt{is\_ticketing}
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{pics/etl_places_result_final.png}
+	\caption{Résultat final du processus ETL appliqué à la table \textit{places}}
+\end{figure}
+
+%--------------------------------------------------
+
+\section{Traitement ETL du fichier \textit{recettes}}
+
+\subsection{Présentation du fichier recettes}
+
+Le fichier \textit{recettes} contient les informations relatives aux transactions financières, notamment les montants, les dates et les identifiants associés aux lieux et aux types de revenus.
+
+Cette table représente la table principale du modèle décisionnel, car elle contient les mesures à analyser, notamment le montant des recettes.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{pics/etl_recettes_raw_input.png}
+	\caption{Fichier recettes avant traitement dans Talend}
+\end{figure}
+
+\subsection{Analyse des données}
+
+Contrairement à la table \textit{places}, le fichier \textit{recettes} ne nécessitait pas une transformation complexe des valeurs. Les données étaient globalement cohérentes.
+
+Cependant, une étape de structuration était nécessaire afin de garantir une bonne lecture du fichier dans Talend et d’obtenir un schéma exploitable pour le Data Warehouse.
+
+\subsection{Chargement et configuration dans Talend}
+
+Le fichier a été importé dans Talend à l’aide du composant \texttt{tFileInputDelimited}. Une configuration correcte du séparateur a permis de distinguer les différentes colonnes du fichier CSV.
+
+\subsection{Transformation des données avec tMap}
+
+Le composant \texttt{tMap} a été utilisé pour organiser les colonnes et vérifier la cohérence du schéma.
+
+Les principales opérations réalisées sont :
+\begin{itemize}
+	\item mapping direct des colonnes sans modification des valeurs ;
+	\item vérification de la cohérence du schéma ;
+	\item organisation des champs dans une structure adaptée au Data Warehouse.
+\end{itemize}
+
+Aucune transformation complexe n’a été nécessaire, car les valeurs étaient déjà exploitables après structuration.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{pics/etl_recettes_tmap.png}
+	\caption{Transformation des données du fichier recettes avec tMap}
+\end{figure}
+
+\subsection{Résultat final}
+
+Après traitement, les données ont été correctement structurées en colonnes distinctes.
+
+Le fichier final contient les colonnes suivantes :
+
+\begin{itemize}
+	\item \texttt{id}
+	\item \texttt{revenue\_type\_id}
+	\item \texttt{place\_id}
+	\item \texttt{date\_versement}
+	\item \texttt{amount}
+	\item \texttt{created\_at}
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{pics/etl_recettes_output_final.png}
+	\caption{Résultat final du fichier recettes après traitement ETL}
+\end{figure}
+
+Ces données sont désormais prêtes pour leur intégration dans le Data Warehouse et leur exploitation dans les outils de Business Intelligence.
+
+%--------------------------------------------------
+
+\section{Processus ETL des données \textit{regies}}
+
+\subsection{Extraction des données}
+
+La table \textit{regies} contient les informations relatives aux régies ou entités de gestion. Elle permet de relier les monuments à leurs structures administratives.
+
+Les données sources sont structurées en plusieurs colonnes, notamment \texttt{id}, \texttt{title}, \texttt{city\_id}, \texttt{code} et \texttt{user\_id}. Certaines valeurs peuvent être absentes dans quelques lignes.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{pics/etl_regies_raw_data_excel.png}
+	\caption{Données sources de la table \textit{regies} avant traitement}
+\end{figure}
+
+\subsection{Transformation des données}
+
+Le processus ETL a été réalisé avec Talend Open Studio en utilisant les composants \texttt{tFileInputDelimited}, \texttt{tMap} et \texttt{tFileOutputDelimited}.
+
+Les principales transformations effectuées sont :
+\begin{itemize}
+	\item nettoyage des champs texte avec la fonction \texttt{trim()} ;
+	\item gestion des valeurs nulles ;
+	\item structuration correcte des colonnes dans le fichier de sortie.
+\end{itemize}
+
+Lors de l’export et de l’ouverture du fichier résultat, un problème d’affichage des caractères accentués a été constaté. Ce problème était lié à l’encodage du fichier CSV. Il a été corrigé en utilisant l’encodage ISO pour la lecture et l’écriture des fichiers dans Talend.
+
+\subsection{Chargement et résultat final}
+
+Après traitement, les données sont correctement structurées, les colonnes sont bien séparées et les valeurs sont exploitables pour les étapes suivantes du projet.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{pics/etl_regies_output_clean_iso.png}
+	\caption{Données de la table \textit{regies} après transformation et correction de l’encodage}
+\end{figure}
+
+Les champs vides observés dans certaines colonnes correspondent à des valeurs manquantes dans les données sources et ne représentent pas une erreur du processus ETL.
+
+%--------------------------------------------------
+
+\section{Conclusion}
+\section{Conclusion}
+
+Ce chapitre a présenté la mise en œuvre du processus ETL à l’aide de Talend Open Studio. Les différentes tables nécessaires au système décisionnel ont été extraites depuis la base de données MySQL, puis transformées et chargées sous forme de fichiers CSV propres et structurés.
+
+Les transformations réalisées ont permis de corriger plusieurs problèmes, notamment la présence de données complexes dans la table \textit{places}, les valeurs manquantes, les problèmes d’encodage observés dans la table \textit{regies}, ainsi que l’organisation des données de la table \textit{recettes}.
+
+À l’issue de cette étape, les données sont devenues cohérentes, homogènes et exploitables. Elles sont désormais prêtes à être intégrées dans le Data Warehouse et utilisées pour l’analyse décisionnelle.
+
+Le chapitre suivant sera consacré à l’exploitation de ces données à travers la définition des indicateurs de performance (KPI) et la réalisation de tableaux de bord interactifs à l’aide de Power BI. suivante à travers des tableaux de bord réalisés avec Power BI.
+\chapter{Analyse des données et visualisation avec Power BI}
+
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+Après la préparation des données à travers le processus ETL, cette étape consiste à exploiter les données nettoyées afin de produire des analyses décisionnelles. L’objectif principal de ce chapitre est de présenter la visualisation des données à l’aide de Power BI et de mettre en évidence les principaux indicateurs de performance liés à la billetterie des monuments historiques.
+
+Power BI permet de transformer les données préparées en tableaux de bord interactifs. Ces tableaux de bord facilitent la lecture des informations, la comparaison des performances et l’aide à la prise de décision. Dans le cadre de ce projet, les analyses portent principalement sur les recettes, les transactions, les monuments, les types de revenus, les régies ainsi que l’évolution des recettes dans le temps.
+
+\section{Importation des données dans Power BI}
+
+Les fichiers CSV obtenus après le processus ETL ont été importés dans Power BI afin de construire le modèle d’analyse. Les fichiers utilisés sont les suivants : \textit{recettes\_out}, \textit{places1\_out}, \textit{regies\_out1} et \textit{revenue\_out}.
+
+Ces fichiers représentent les données préparées et structurées, prêtes à être utilisées dans un environnement décisionnel.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{pics/powerbi_import_csv_files.png}
+	\caption{Importation des fichiers CSV dans Power BI}
+\end{figure}
+
+\section{Modélisation des relations entre les tables}
+
+Après l’importation des données, les relations entre les tables ont été définies dans Power BI. Cette étape est essentielle, car elle permet de relier la table de faits aux différentes dimensions afin de réaliser des analyses multidimensionnelles.
+
+Les relations créées sont les suivantes :
+
+\begin{itemize}
+	\item \textit{recettes\_out.place\_id} lié à \textit{places1\_out.id} ;
+	\item \textit{recettes\_out.revenue\_type\_id} lié à \textit{revenue\_out.id} ;
+	\item \textit{places1\_out.regie\_id} lié à \textit{regies\_out1.id}.
+\end{itemize}
+
+Ces relations permettent d’analyser les recettes selon plusieurs axes, notamment les monuments, les types de revenus et les régies.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{pics/powerbi_model_relationships.png}
+	\caption{Modèle relationnel des données dans Power BI}
+\end{figure}
+
+\section{Définition des indicateurs de performance}
+
+Les indicateurs clés de performance, appelés KPI (\textit{Key Performance Indicators}), sont des mesures utilisées pour évaluer la performance d’une activité. Dans ce projet, ils permettent de suivre les recettes générées, le nombre de transactions et la moyenne des recettes.
+
+Les mesures ont été créées dans Power BI à l’aide du langage DAX.
+
+\subsection{Total des recettes}
+
+Le premier indicateur correspond au montant total des recettes générées. Il est calculé à partir de la somme de la colonne \textit{amount}.
+
+\begin{verbatim}
+	Total Recettes = SUM(recettes_out[amount])
+\end{verbatim}
+
+Cet indicateur permet d’avoir une vision globale du chiffre d’affaires généré par les activités de billetterie.
+
+\subsection{Nombre de transactions}
+
+Le deuxième indicateur correspond au nombre total de transactions enregistrées dans la table \textit{recettes\_out}.
+
+\begin{verbatim}
+	Nombre Transactions = COUNT(recettes_out[id])
+\end{verbatim}
+
+Cet indicateur permet d’évaluer le volume d’activité réalisé au niveau des monuments historiques.
+
+\subsection{Moyenne des recettes}
+
+Le troisième indicateur correspond à la moyenne des recettes par transaction.
+
+\begin{verbatim}
+	Moyenne Recettes = AVERAGE(recettes_out[amount])
+\end{verbatim}
+
+Cet indicateur permet d’avoir une idée sur la valeur moyenne générée par chaque opération financière.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{pics/powerbi_kpi_measures.png}
+	\caption{Création des mesures KPI dans Power BI}
+\end{figure}
+
+\section{Présentation des cartes KPI}
+
+Les cartes KPI permettent d’afficher les indicateurs principaux sous forme de valeurs synthétiques. Elles offrent une lecture rapide des performances globales sans avoir besoin d’analyser directement les tableaux de données.
+
+Dans ce projet, trois cartes KPI ont été créées :
+
+\begin{itemize}
+	\item \textbf{Total Recettes} : indique le montant global des recettes ;
+	\item \textbf{Nombre Transactions} : indique le nombre total d’opérations ;
+	\item \textbf{Moyenne Recettes} : indique la moyenne des montants enregistrés.
+\end{itemize}
+
+Ces cartes sont utiles pour donner une vision immédiate de la situation générale. Elles constituent la première partie du tableau de bord, car elles résument les résultats les plus importants.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.85\textwidth]{pics/powerbi_kpi_cards_styled.png}
+	\caption{Cartes KPI principales du tableau de bord}
+\end{figure}
+
+\section{Analyse des recettes par monument}
+
+L’analyse des recettes par monument permet d’identifier les sites culturels qui génèrent le plus de revenus. Cette visualisation est importante, car elle permet de comparer les performances financières des différents monuments.
+
+Dans ce graphique, l’ensemble des monuments est représenté afin de donner une vision globale des recettes, malgré une lisibilité réduite due au nombre important de catégories.
+
+Cette analyse permet aux responsables d’identifier les monuments les plus performants et ceux qui nécessitent davantage d’attention ou d’amélioration.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{pics/powerbi_recettes_par_monument.png}
+	\caption{Analyse des recettes par monument}
+\end{figure}
+
+\section{Analyse des recettes par type de revenu}
+
+L’analyse des recettes par type de revenu permet de comprendre la nature des revenus générés. Elle permet d’identifier les types de recettes les plus importants et d’évaluer leur contribution dans le total global.
+
+Ce graphique montre que certains types de revenus représentent une part importante des recettes, tandis que d’autres contribuent de manière plus faible. Cette analyse aide à mieux comprendre les sources principales de revenus et à orienter les décisions liées à la gestion de la billetterie.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{pics/powerbi_recettes_par_type.png}
+	\caption{Analyse des recettes par type de revenu}
+\end{figure}
+
+\section{Évolution des recettes dans le temps}
+
+L’analyse temporelle permet d’étudier l’évolution des recettes au fil du temps. Elle est essentielle dans un système décisionnel, car elle permet d’identifier les périodes de forte activité, les baisses éventuelles et les variations des revenus.
+
+Dans ce projet, l’évolution des recettes est présentée de manière détaillée à partir des données journalières. Cette approche permet d’observer avec précision les fluctuations des recettes au cours du temps.
+
+Les pics observés peuvent correspondre à des périodes de forte fréquentation ou à des événements particuliers. À l’inverse, les baisses peuvent indiquer des périodes de faible activité.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{pics/powerbi_evolution_recettes.png}
+	\caption{Évolution des recettes dans le temps}
+\end{figure}
+
+\section{Analyse des recettes par régie}
+
+L’analyse des recettes par régie permet de comparer les performances des différentes entités de gestion. Cette visualisation est importante, car elle montre la contribution de chaque régie dans le total des recettes.
+
+Les résultats permettent d’identifier les régies les plus performantes, comme celles qui génèrent une part importante des recettes, ainsi que les régies ayant une contribution plus faible. Cette information peut aider les responsables à mieux répartir les efforts de gestion et à améliorer le suivi des performances.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{pics/powerbi_recettes_par_regie.png}
+	\caption{Analyse des recettes par régie}
+\end{figure}
+
+\section{Apport du tableau de bord à la prise de décision}
+
+Le tableau de bord réalisé dans Power BI permet de transformer les données préparées en informations claires et exploitables. Il facilite la compréhension des performances grâce à des indicateurs visuels simples et interactifs.
+
+Les cartes KPI offrent une vision globale de l’activité, tandis que les graphiques permettent une analyse plus détaillée selon plusieurs axes : monument, type de revenu, régie et période.
+
+Ainsi, ce tableau de bord aide les responsables à suivre l’évolution des recettes, comparer les performances des monuments, identifier les sources de revenus principales et détecter les périodes de forte ou de faible activité.
+
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
+
+Ce chapitre a présenté l’exploitation des données préparées à l’aide de Power BI. Après l’importation des fichiers issus du processus ETL, les relations entre les tables ont été définies afin de construire un modèle analytique cohérent.
+
+Les indicateurs de performance ont ensuite été créés à l’aide de mesures DAX, notamment le total des recettes, le nombre de transactions et la moyenne des recettes. Ces KPI ont été représentés sous forme de cartes afin de fournir une vision rapide et synthétique de l’activité.
+
+Enfin, plusieurs visualisations ont été réalisées pour analyser les recettes par monument, par type de revenu, par régie ainsi que leur évolution dans le temps. Ces analyses permettent de mieux comprendre les performances des monuments historiques et de fournir une base fiable pour la prise de décision.
+
+Ainsi, la solution décisionnelle mise en place permet de passer des données brutes à des informations exploitables, contribuant à une meilleure analyse de la billetterie des monuments historiques.
+\end{document}

@@ -1,0 +1,23 @@
+\babel@toc {french}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Logo du Ministère de la Jeunesse, de la Culture et de la Communication}}{4}{figure.1.1}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Liste des tables de la base de données source}}{8}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Aperçu des données de la table \texttt {recettes}}}{9}{figure.2.2}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Aperçu des commandes de billetterie}}{10}{figure.2.3}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Aperçu des lignes de commandes de billetterie}}{10}{figure.2.4}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Aperçu des données de la table \texttt {places}}}{11}{figure.2.5}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Aperçu des types de revenus}}{12}{figure.2.6}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Jointure entre les recettes, les monuments et les types de revenus}}{13}{figure.2.7}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Jointure entre les commandes de billetterie, les lignes de commandes et les monuments}}{13}{figure.2.8}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Principe général du processus ETL}}{16}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Schéma décisionnel réalisé dans Power BI}}{19}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Données brutes de la table \texttt {places} avant transformation}}{20}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Transformation des données dans le composant \texttt {tMap}}}{21}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Exécution réussie du job ETL de la table \texttt {places}}}{22}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Résultat final de la transformation de la table \texttt {places}}}{23}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Données brutes de la table \texttt {regies}}}{24}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Transformation des données de la table \texttt {regies} avec \texttt {tMap}}}{25}{figure.3.8}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Exécution réussie du job ETL de la table \texttt {regies}}}{25}{figure.3.9}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Résultat final de la transformation de la table \texttt {regies}}}{26}{figure.3.10}%

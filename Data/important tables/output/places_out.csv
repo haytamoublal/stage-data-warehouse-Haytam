@@ -1,0 +1,144 @@
+regie_id,id,title,city_id,is_ticketing
+22,100,SALLE DU THEATRE NATIONAL MESSALLA TETOAUN,12,0
+1,101,Conservatoire National De Musique Et De Danse -Agdal,1,0
+1,102,Conservatoire du musique Moulay Rachid,1,0
+1,103,Conservatoire de musique et d'art chorégraphique Salé,1,0
+1,104,F.N.A.C,12,0
+1,105,Salle de la maison de culture Skhirat,12,0
+1,106,Salle de spectacles de la maison de culture Tamsna,12,0
+1,107,Salle Haj Bahnini,1,0
+1,108,Salle Mohamed Hajji,12,0
+25,109,Conservatoire de Musique et d'arts chorigraphiques à Errachidia,10,0
+23,110,Salle du Centre Culturel Khair-Eddine,28,0
+21,111,Conservatoire de musique et d'arts chorégraphiques de Taza,0,0
+21,112,Salle de théâtre de Taza,12,0
+20,113,Conservatoire National de Musique de Tanger,0,0
+18,114,Conservatoire de Musique de Safi,0,0
+16,115,Maison de Culture à Ouarzazate,12,0
+4,116,Conservatoire de Musique de Meknès,0,0
+9,117,Maison de culture d'Es-Smaraaaa,12,0
+2,118,Conservatoire de Musique de Dchira à Agadir,8,0
+2,119,Conservatoire de Musique de Ait Melloul,8,0
+33,120,Centre culture al wahda,23,0
+33,121,Centre culture al walae,23,0
+33,122,Conservatoire de musique et d'art chorégraphique à dakhla,23,0
+30,123,Conservatoire de musique et d'art chorégrahique de mhamid,0,
+12,124,Conservatoire de Musique de Kénitra,18,0
+12,126,Conservatoire de musique à sidi Kacem,24,0
+22,128,Salle du complexe culturel ouazane,19,0
+30,130,Maison culture el kelaa des sraghna,6,0
+31,131,Conservatoire de musique et d'art chorégraphique Abdelouahab Agoumy,16,0
+11,132,Conservatoire de Musique de Fès,29,0
+4,133,maison culture mouly driss zerhoun,4,0
+14,134,Conservatoire de musique de Laayoun,27,0
+14,135,CENTRE CULTUREL OUM SAAD,27,0
+14,136,Maison de culture de Laayoun,27,0
+14,137,Centre Culturel De Tarfaya,27,0
+8,138,Théatre al Hay de la ville portugaise,30,0
+8,139,Site historique Al-Qabtaniya,30,0
+8,140,La cité portugaise,30,0
+8,141,La maison de la culture Zmamra,30,0
+22,142,Tetouan National School of Arts and Crafts,0,
+22,143,Théatre du Centre Culturel de Martil,19,0
+17,144,conservatoire de musique de jerada,20,0
+7,145,conservatoire de musique de Chefchaouen,11,0
+22,146,Centre Culturel De Tétouan,19,0
+22,147,Salle complex de Ouazzane,32,0
+20,148,Centre Culturel Béni Makada,3,0
+22,149,centre culturel lalla aicha,19,0
+22,150,centre culturel martil,19,0
+22,151,centre culturel fnideq,34,0
+22,152,centre culturel M'diq,35,0
+1,153,SIEL,1,0
+6,154,SILEJ,9,0
+31,155,CENTRE CULTUREL Abilkacem Ziani Khenifra,36,0
+25,156,CENTRE CULTUREL ERRACHIDIA,10,0
+25,157,CENTRE CULTUREL RISSANI,37,0
+13,158,Conservatoire de Musique de Khouribga,33,0
+16,160,Centre culturel tinghir,39,0
+35,161,Centre culturel Taroudant,40,0
+34,162,Salle Test,12,0
+10,163,sqala la medina,5,0
+6,164,Centre culturel ben msik,9,0
+6,165,Maison de culture bouznika,42,0
+1,166,Salle de Théâtre Al Mansour,1,0
+16,167,CENTRE CULTUREL ZAGORA,31,0
+20,168,Centre culturel de Bni Makada,3,0
+23,169,Conservatoire Musical Ra\u00efss Lhaj Belaid,28,0
+36,170,Conservatoire de Guelmim,43,0
+1,171,Auditorium de l'INSMAC,1,0
+31,172,Centre Culturel Kasbat Tadla,44,0
+21,173,Salle de spectacles de Taza,26,0
+8,174,Le sous sol du bastion Saint Sébastien,30,0
+8,175,Le sous sol du bastion de l'ange,30,0
+20,22,Grottes d'Hercule,0,
+20,23,Palais Perdicaris,0,
+30,24,Palais El Bahia,0,
+30,25,Palais  Badii,0,
+30,26,Tombeaux Saadiens,0,
+31,28,CIP Ain Assardoun,0,
+30,29,Centre culturel daoudiate,6,0
+30,30,Pavillon de la Ménara,0,
+30,31,Coupole Almoravides,0,
+30,32,Théâtre Dar Attakafa,6,0
+20,33,Palais des arts et de la culture,3,0
+7,34,Qasba de Chefchaouen,0,
+7,35,Masrah al kasabah,11,0
+7,36,Salle du centre culturel de Chefchaouen,11,0
+24,38,Site  archéologique de Volubilis,0,
+10,39,La Sqala  du Port,0,
+15,41,Site  archéologique de Lixus,0,
+1,43,Médersa des Mérinides,0,
+17,44,Centre Culturel de Bouarfa,21,0
+17,46,Centre culturel de Debdou,20,0
+17,47,Théatre Mohamed VI Oujda,20,0
+17,48,Conservatoire regional de la musique à oujda,20,0
+11,49,Centre culturel 02 octobre wtatelhaj,41,0
+11,50,Centre culturel hay al massira fes,12,0
+4,51,Centre culturel mohamed Mennouni,4,0
+12,52,Centre culturel  de sidi slimane,18,0
+12,53,Centre culturel Mechraa Bel Ksiri,18,0
+12,54,CENTRE CULTUREL kENITRA,18,0
+11,55,CENTRE CULTUREL D EDUCATION CULTURELLE AIN KADOUS,12,0
+4,56,CENTRE CULTUREL AZROU,12,0
+4,57,CENTRE CULTUREL EL HAJEB,12,0
+1,58,CENTRE CULTUREL SKHIRAT,12,0
+1,59,CENTRE CULTUREL TAMESNA,12,0
+1,60,CENTRE D ANIMATION CULTURELLE ET ARTISTIQUE  DE TABRIQUET,12,0
+16,61,CENTRE CULTUREL ZAGORA,12,0
+16,62,CENTRE CULTUREL KALAAT M GOUNA,12,0
+16,63,CENTRE CULTUREL OUARZAZTE,12,0
+6,66,CENTRE CULTUREL AIN HARROUDA CASABLANCA,9,0
+6,67,CENTRE CULTUREL BOUSKOURA,12,0
+6,68,CENTRE CULTUREL FIRDOUS,12,0
+8,69,Théatre Afifi El-Jadida,30,0
+31,70,CENTRE CULTUREL BENIMELLAL,12,0
+31,71,CENTRE CULTUREL AZILAL,12,0
+18,72,MAISON DE LA CULTURE KAOUKI SAFI,12,0
+18,73,CITE DES ARTS SAFI,12,0
+30,74,CONSERVATOIRE DU MUSIQUE DAOUDIATE A MARRAKECH,12,0
+19,75,CENTRE CULTUREL SETTAT,12,0
+19,76,CENTRE CULTUREL BEN AHMED,22,0
+19,77,CENTRE CULTUREL BEN SLIMANE,12,0
+19,78,KASABAH ISMAILIA,12,0
+12,79,KASBAH MEHDIYA,0,0
+12,80,SITE TAMUSIDA,12,0
+15,81,SITE MEZOURA,12,0
+11,82,SALLE DU CENTRE CULTUREL D EDUCATION CULTURELLE AIN KADOUS,12,0
+11,83,SALLE DU centre culturel hay al massira fes,12,0
+15,84,CENTRE CULTUREL BAB LEBHAR,12,0
+15,85,CONSERVATOIRE DU MUSIQUE DE LARACHE,0,0
+15,86,SALLE DU CENTRE CULTUREL BAB LEBHAR,12,0
+15,87,CONSERVATOIRE DU MUSIQUE KSSAR LEKBIR,0,0
+30,88,Conservatoire de Musique et d'art chorégraphique Bab Doukkala,0,0
+15,89,Salle du centre culturel Larache,12,0
+15,90,Salle du centre culturel Lixus,12,0
+6,91,Conservatoire de Musique de Casablanca,0,0
+31,92,Conservatoire de musique et arts chorégraphiques Mhamed Rouicha à Khénifra,0,0
+8,93,Kasbah de Boulaaouane,12,0
+22,94,L'Ecole des arts et métiers,12,0
+22,95,Le site archéologique de Tamuda,0,
+22,96,Conservatoire de Musique de Tétouan,19,0
+22,97,SALLE DE LA MAISON DE CULTURE TETOAUN,12,0
+22,98,SALLE DE LA MAISON DE CULTURE M ' DIEQ,12,0
+22,99,SALLE DE LA MAISON DE CULTURE FNIDEQ,12,0

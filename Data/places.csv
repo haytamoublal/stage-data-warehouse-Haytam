@@ -1,0 +1,6 @@
+Field,Type,Null,Key,Default,Extra
+regie_id,varchar(20),YES,,NULL,
+id,varchar(20),NO,PRI,NULL,
+title,text,YES,,NULL,
+city_id,varchar(20),YES,,NULL,
+is_ticketing,bit(1),YES,,NULL,
