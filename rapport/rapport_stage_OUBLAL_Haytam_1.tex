@@ -864,4 +864,142 @@ L’expression suivante a été utilisée dans le composant \texttt{tMap} afin d
 			\caption{Résultat final de la transformation de la table \texttt{regies}}
 			\label{fig:regies_clean}
 		\end{figure}
+		\subsection{Transformation de la table \texttt{revenue\_types}}
+		
+		La table \texttt{revenue\_types} contient les différents types de revenus liés aux activités culturelles et aux monuments historiques. Cette table joue un rôle important dans le système décisionnel, car elle permet de classifier les recettes selon leur nature.
+		
+		Avant la transformation, certaines anomalies ont été observées dans les données sources, notamment des problèmes d’encodage des caractères spéciaux ainsi que des valeurs manquantes dans la colonne \texttt{revenue\_category\_id}. La Figure~\ref{fig:revenue_types_brute} présente un aperçu des données brutes avant traitement.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{pics/20_table_revenue_types_brute.png}
+			\caption{Aperçu de la table \texttt{revenue\_types} avant transformation}
+			\label{fig:revenue_types_brute}
+		\end{figure}
+		
+		Le processus ETL a été réalisé dans Talend à l’aide des composants \texttt{tFileInputDelimited}, \texttt{tMap} et \texttt{tFileOutputDelimited}. Une transformation a été appliquée sur la colonne \texttt{title} afin de supprimer les espaces inutiles et normaliser les valeurs textuelles.
+		
+		Les principales transformations réalisées sont les suivantes :
+		
+		\begin{itemize}
+			\item Suppression des espaces inutiles avec la fonction \texttt{trim()} ;
+			\item Correction des problèmes d’encodage des caractères spéciaux ;
+			\item Conservation des identifiants d’origine sans modification ;
+			\item Remplacement des valeurs manquantes de \texttt{revenue\_category\_id} par la valeur \texttt{0} ;
+			\item Génération d’un fichier CSV nettoyé et structuré pour l’intégration dans Power BI.
+		\end{itemize}
+		
+		La Figure~\ref{fig:tmap_revenue_types} illustre les transformations réalisées dans le composant \texttt{tMap}.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{pics/21_transformation_tmap_revenue_types.png}
+			\caption{Transformation des données dans le composant \texttt{tMap}}
+			\label{fig:tmap_revenue_types}
+		\end{figure}
+		
+		Après l’exécution du job ETL, un fichier nettoyé et structuré a été généré avec succès. La Figure~\ref{fig:execution_revenue_types} présente l’exécution du job dans Talend.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.9\textwidth]{pics/22_execution_job_revenue_types.png}
+			\caption{Exécution du job ETL de la table \texttt{revenue\_types}}
+			\label{fig:execution_revenue_types}
+		\end{figure}
+		
+		Le résultat final après transformation est illustré dans la Figure~\ref{fig:resultat_revenue_types}.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{pics/23_resultat_revenue_types_out.png}
+			\caption{Résultat final de la transformation de la table \texttt{revenue\_types}}
+			\label{fig:resultat_revenue_types}
+		\end{figure}
+		
+		Cette transformation a permis d’obtenir des données propres, homogènes et exploitables dans le système décisionnel et les tableaux de bord Power BI.
+		\subsection{Transformation de la table \texttt{recettes}}
+		
+		La table \texttt{recettes} représente l’une des principales tables de faits du modèle décisionnel. Elle contient les informations relatives aux recettes saisies manuellement, notamment l’identifiant de la recette, le type de revenu, le monument concerné, la date de versement, le montant et la date de création.
+		
+		Cette table est importante dans le projet, car elle permet d’analyser les recettes selon plusieurs axes : le monument, le type de revenu et la période. Avant son intégration dans le système décisionnel, une étape de transformation a été réalisée afin de garantir la cohérence des données et d’éviter les erreurs lors du chargement dans Power BI.
+		
+		La Figure~\ref{fig:recettes_brute} présente un aperçu de la table \texttt{recettes} avant transformation.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{pics/24_table_recettes_brute.png}
+			\caption{Aperçu de la table \texttt{recettes} avant transformation}
+			\label{fig:recettes_brute}
+		\end{figure}
+		
+		Le traitement ETL de cette table a été réalisé avec Talend Open Studio à l’aide des composants \texttt{tFileInputDelimited}, \texttt{tMap} et \texttt{tFileOutputDelimited}. Dans cette transformation, les colonnes ont été traitées sous forme de chaînes de caractères afin d’éviter les erreurs de conversion liées aux valeurs manquantes ou aux formats non homogènes.
+		
+		Les principales transformations réalisées sont les suivantes :
+		
+		\begin{itemize}
+			\item conservation de l’identifiant de la recette sans modification ;
+			\item remplacement des valeurs manquantes de \texttt{revenue\_type\_id} par \texttt{0} ;
+			\item remplacement des valeurs manquantes de \texttt{place\_id} par \texttt{0} ;
+			\item nettoyage des dates avec la fonction \texttt{trim()} ;
+			\item remplacement des montants vides par \texttt{0} ;
+			\item conservation de la date de création après nettoyage des espaces inutiles.
+		\end{itemize}
+		
+		La Figure~\ref{fig:tmap_recettes} illustre la configuration des transformations réalisées dans le composant \texttt{tMap}.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{pics/25_transformation_tmap_recettes.png}
+			\caption{Transformation des données de la table \texttt{recettes} dans \texttt{tMap}}
+			\label{fig:tmap_recettes}
+		\end{figure}
+		
+		Les expressions utilisées dans le composant \texttt{tMap} sont les suivantes :
+		
+	\begin{lstlisting}[language=Java,breaklines=true,basicstyle=\ttfamily\small]
+		
+		row1.id
+		
+		row1.revenue_type_id == null ||
+		row1.revenue_type_id.trim().equals("")
+		? "0"
+		: row1.revenue_type_id
+		
+		row1.place_id == null ||
+		row1.place_id.trim().equals("")
+		? "0"
+		: row1.place_id
+		
+		row1.date_versement == null
+		? ""
+		: row1.date_versement.trim()
+		
+		row1.amount == null ||
+		row1.amount.trim().equals("")
+		? "0"
+		: row1.amount
+		
+		row1.created_at == null
+		? ""
+		: row1.created_at.trim()
+		
+	\end{lstlisting}
+		
+		Après la configuration du flux ETL, le job Talend a été exécuté avec succès afin de générer un fichier propre et structuré.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.9\textwidth]{pics/26_execution_job_recettes.png}
+			\caption{Exécution du job ETL de la table \texttt{recettes}}
+			\label{fig:execution_recettes}
+		\end{figure}
+		
+		Le résultat final obtenu après transformation est présenté dans la Figure~\ref{fig:resultat_recettes}. Les données sont désormais prêtes à être intégrées dans le Data Warehouse et exploitées dans Power BI pour la création des indicateurs de performance.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{pics/27_resultat_recettes_out.png}
+			\caption{Résultat final de la transformation de la table \texttt{recettes}}
+			\label{fig:resultat_recettes}
+		\end{figure}
 \end{document}

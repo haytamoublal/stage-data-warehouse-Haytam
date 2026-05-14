@@ -8,3 +8,6 @@ rapport/pics/
 *.fdb_latexmk
 *.fls
 *.synctex.gz
+Data/data stage update.sql
+Data/Dump20260422.sql
+Data/Dump20260422.zip
