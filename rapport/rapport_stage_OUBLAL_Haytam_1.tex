@@ -1269,4 +1269,209 @@ L’expression suivante a été utilisée dans le composant \texttt{tMap} afin d
 		\end{figure}
 		
 		Les données obtenues sont désormais homogènes, cohérentes et prêtes à être intégrées dans le Data Warehouse ainsi qu’exploitées dans les tableaux de bord Power BI.
+		\subsection{Modélisation du schéma décisionnel}
+		
+		Après l’extraction et la transformation des différentes tables sources, un schéma décisionnel a été conçu afin d’organiser les données dans une structure adaptée à l’analyse décisionnelle et à la création des tableaux de bord dans Power BI.
+		
+		Le modèle réalisé repose sur une approche dimensionnelle de type schéma en étoile étendu (\textit{Extended Star Schema}). Cette architecture permet de séparer les données de mesure stockées dans les tables de faits des données descriptives stockées dans les tables de dimensions.
+		
+		Le système décisionnel conçu contient deux tables de faits principales :
+		
+		\begin{itemize}
+			\item \texttt{fact\_recettes\_out} : contient les informations relatives aux recettes manuelles des monuments historiques ;
+			
+			\item \texttt{fact\_ticketing\_command\_line\_out} : contient les données des ventes de billets et des transactions issues du système de ticketing.
+		\end{itemize}
+		
+		Ces tables de faits sont reliées à plusieurs tables de dimensions permettant de contextualiser les analyses :
+		
+		\begin{itemize}
+			\item \texttt{dim\_places\_out} : informations sur les monuments et sites historiques ;
+			
+			\item \texttt{dim\_regies\_out} : informations relatives aux régies ;
+			
+			\item \texttt{dim\_revenue\_typesout} : catégories et types de recettes ;
+			
+			\item \texttt{dim\_tickets\_type\_out} : types de billets ;
+			
+			\item \texttt{dim\_tickets\_type\_title\_out} : intitulés des types de billets en plusieurs langues ;
+			
+			\item \texttt{dim\_ticketing\_commands\_out} : informations générales des commandes de ticketing.
+		\end{itemize}
+		
+		Cette modélisation permet d’effectuer des analyses multidimensionnelles efficaces sur les recettes, les ventes de billets, les monuments historiques, les régies et les différents types de revenus.
+		
+		La Figure~\ref{fig:schema_decisionnel_powerbi} présente le schéma décisionnel implémenté dans Power BI.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{pics/31_schema_decisionnel_etoile_powerbi.png}
+			\caption{Schéma décisionnel en étoile réalisé dans Power BI}
+			\label{fig:schema_decisionnel_powerbi}
+		\end{figure}
+		
+		Les relations établies entre les tables permettent d’assurer l’intégrité des données et de faciliter la création des indicateurs de performance (KPI) et des tableaux de bord analytiques dans Power BI.
+		\section*{Conclusion}
+		
+		Dans ce chapitre, nous avons présenté les différentes étapes de la conception du système décisionnel ainsi que le processus ETL mis en place pour l’exploitation des données de billetterie des monuments historiques.
+		
+		Nous avons commencé par l’extraction des données depuis les différentes tables de la base opérationnelle, puis nous avons réalisé plusieurs opérations de transformation et de nettoyage afin d’assurer la qualité et la cohérence des données intégrées dans le système décisionnel.
+		
+		Les traitements effectués ont notamment permis de corriger les valeurs manquantes, de convertir certains formats de données, ainsi que de structurer les informations sous une forme exploitable pour l’analyse décisionnelle.
+		
+		Par la suite, nous avons conçu un schéma en étoile composé de tables de faits et de dimensions permettant d’optimiser l’analyse des recettes, des transactions et des ventes de tickets. Cette modélisation constitue une base solide pour la création des tableaux de bord et des indicateurs analytiques.
+		
+		Le chapitre suivant sera consacré à l’implémentation de la solution décisionnelle sous Power BI ainsi qu’à la création des visualisations et des tableaux de bord permettant d’analyser les données de manière interactive et dynamique.
+```latex
+\chapter{Implémentation et visualisation des données sous Power BI}
+
+\section{Introduction}
+
+Après la phase de conception du système décisionnel et la réalisation du processus ETL, les données transformées ont été exploitées dans Power BI afin de créer une solution décisionnelle interactive dédiée à l’analyse de la billetterie des monuments historiques.
+
+Cette étape permet de transformer les données brutes en informations visuelles facilitant l’analyse et l’aide à la prise de décision. Grâce aux tableaux de bord réalisés, les responsables peuvent suivre les recettes, les transactions et les ventes de tickets de manière claire et dynamique.
+
+Dans ce chapitre, nous présentons l’implémentation du modèle décisionnel sous Power BI ainsi que la création des principaux indicateurs KPI et visualisations analytiques utilisés pour l’analyse des performances financières.
+
+\section{Implémentation du modèle décisionnel sous Power BI}
+
+Après la transformation des données avec Talend Open Studio, les fichiers CSV générés ont été importés dans Power BI afin de construire l’environnement analytique du système décisionnel.
+
+Les différentes tables de dimensions et tables de faits ont été intégrées dans Power BI afin de permettre l’exploitation des données à travers des tableaux de bord interactifs et des visualisations analytiques.
+
+Cette intégration permet de centraliser les données nettoyées et structurées dans un environnement dédié à l’analyse décisionnelle.
+
+\subsection{Création des indicateurs KPI dans Power BI}
+
+Après la modélisation du schéma décisionnel et l’intégration des données transformées dans Power BI, plusieurs indicateurs de performance (KPI) ont été créés afin de faciliter l’analyse des recettes et des ventes de billetterie.
+
+Les KPI permettent d’obtenir une vue synthétique des informations les plus importantes du système décisionnel. Ils offrent aux responsables une lecture rapide des performances globales des monuments historiques et des revenus générés.
+
+Les principaux indicateurs réalisés sont les suivants :
+
+\begin{itemize}
+	\item \textbf{Total Recettes} : représente le montant total des recettes enregistrées dans le système.
+	
+	\item \textbf{Nombre Transactions} : indique le nombre total des transactions réalisées.
+	
+	\item \textbf{Moyenne Recettes} : calcule la moyenne des recettes enregistrées.
+	
+	\item \textbf{Revenus Ticketing} : représente les revenus générés par le système de billetterie électronique.
+	
+	\item \textbf{Quantité Tickets} : indique le nombre total de tickets vendus.
+\end{itemize}
+
+Ces indicateurs ont été réalisés à l’aide des visualisations de type \textit{Card} dans Power BI. Chaque carte affiche une mesure spécifique calculée à partir des tables de faits du modèle décisionnel.
+
+La Figure suivante présente les différents KPI réalisés dans le tableau de bord décisionnel.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{pics/powerbi_kpi_cards_dashboard.png}
+	\caption{Indicateurs KPI réalisés dans Power BI}
+	\label{fig:kpi_powerbi}
+\end{figure}
+
+La création de ces KPI constitue une première étape dans la construction du tableau de bord décisionnel. Ils permettent de résumer rapidement les données financières et de préparer les futures visualisations analytiques.
+```
+\subsection{Visualisation des recettes par monument}
+
+Afin d’analyser la répartition des recettes entre les différents monuments historiques, une visualisation graphique de type \textit{Clustered Column Chart} a été réalisée dans Power BI.
+
+Cette représentation permet de comparer les revenus générés par chaque monument et d’identifier les sites historiques produisant les recettes les plus importantes.
+
+L’axe horizontal représente les monuments historiques tandis que l’axe vertical affiche le montant total des recettes enregistrées.
+
+La Figure suivante présente les recettes générées par les différents monuments historiques.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{pics/powerbi_recettes_par_monument.png}
+	\caption{Répartition des recettes par monument}
+	\label{fig:recettes_monument}
+\end{figure}
+
+Cette visualisation facilite l’analyse comparative des performances financières des monuments historiques et permet d’identifier les monuments les plus rentables.
+\subsection{Visualisation des recettes par type de revenu}
+
+Afin d’analyser les différentes sources de revenus générées par les monuments historiques, une visualisation graphique a été réalisée dans Power BI sous forme de \textit{Clustered Column Chart}.
+
+Cette représentation permet d’identifier les catégories de revenus les plus importantes et d’analyser la contribution de chaque type de revenu dans les recettes globales.
+
+L’axe horizontal représente les différents types de revenus tandis que l’axe vertical affiche le montant total des recettes enregistrées.
+
+La Figure suivante présente la répartition des recettes selon les types de revenus.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{pics/powerbi_recettes_par_type_revenu.png}
+	\caption{Répartition des recettes par type de revenu}
+	\label{fig:recettes_type_revenu}
+\end{figure}
+
+Cette visualisation met en évidence les catégories de revenus les plus rentables et permet une meilleure compréhension de la structure financière des activités liées aux monuments historiques.
+\subsection{Évolution des recettes dans le temps}
+
+Afin d’analyser l’évolution des recettes au fil du temps, une visualisation graphique de type \textit{Line Chart} a été réalisée dans Power BI.
+
+Cette représentation permet d’observer les variations des recettes selon les périodes et d’identifier les tendances de l’activité financière des monuments historiques.
+
+L’axe horizontal représente les mois tandis que l’axe vertical affiche le montant total des recettes enregistrées.
+
+La Figure suivante présente l’évolution des recettes dans le temps.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{pics/powerbi_evolution_recettes.png}
+	\caption{Évolution des recettes dans le temps}
+	\label{fig:evolution_recettes}
+\end{figure}
+
+Cette visualisation permet d’analyser les variations des revenus au cours du temps et d’identifier les périodes de forte ou de faible activité financière.
+\subsection{Visualisation des recettes par régie}
+
+Afin d’analyser la contribution des différentes régies dans les recettes globales, une visualisation graphique de type \textit{Clustered Bar Chart} a été réalisée dans Power BI.
+
+Cette représentation permet de comparer les montants des recettes générées par chaque régie et d’identifier les régies les plus performantes.
+
+L’axe vertical représente les différentes régies tandis que l’axe horizontal affiche le montant total des recettes enregistrées.
+
+La Figure suivante présente la répartition des recettes par régie.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{pics/powerbi_recettes_par_regie.png}
+	\caption{Répartition des recettes par régie}
+	\label{fig:recettes_regie}
+\end{figure}
+
+Cette visualisation permet d’évaluer les performances financières des différentes régies et de mieux comprendre la répartition géographique des revenus générés par les monuments historiques.
+\section{Tableau de bord décisionnel}
+
+Après la création des différents indicateurs KPI et des visualisations analytiques, un tableau de bord décisionnel global a été réalisé dans Power BI.
+
+Ce tableau de bord regroupe les principales informations permettant d’analyser les recettes des monuments historiques ainsi que les performances du système de billetterie.
+
+Le tableau de bord contient :
+
+\begin{itemize}
+	\item Les indicateurs KPI principaux ;
+	\item Les recettes par monument ;
+	\item Les recettes par régie ;
+	\item Les recettes par type de revenu ;
+	\item L’évolution des recettes dans le temps.
+\end{itemize}
+
+L’objectif de ce tableau de bord est de fournir une vue synthétique et interactive des données afin d’aider les responsables à prendre des décisions rapides et efficaces.
+
+La Figure suivante présente le tableau de bord décisionnel final réalisé dans Power BI.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{pics/powerbi_dashboard_final.png}
+	\caption{Tableau de bord décisionnel réalisé dans Power BI}
+	\label{fig:dashboard_final}
+\end{figure}
+
+Grâce à ce tableau de bord, les utilisateurs peuvent facilement suivre les performances financières, analyser les revenus générés et identifier les tendances importantes liées à l’activité des monuments historiques.
 \end{document}
