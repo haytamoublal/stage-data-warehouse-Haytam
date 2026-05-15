@@ -1002,4 +1002,271 @@ L’expression suivante a été utilisée dans le composant \texttt{tMap} afin d
 			\caption{Résultat final de la transformation de la table \texttt{recettes}}
 			\label{fig:resultat_recettes}
 		\end{figure}
+		\subsection{Transformation de la table \texttt{ticketing\_commands}}
+		
+		La table \texttt{ticketing\_commands} représente les commandes issues du système de billetterie. Elle contient des informations importantes telles que l’identifiant de la commande, l’utilisateur, les dates de création et de mise à jour, la référence, le montant, le statut de paiement, le monument concerné ainsi que la référence de transaction.
+		
+		Cette table joue un rôle essentiel dans l’analyse des ventes de billetterie, car elle permet de relier les commandes aux monuments à travers la colonne \texttt{place\_id}. Avant son exploitation dans Power BI, une transformation a été réalisée afin de traiter les valeurs manquantes et d’homogénéiser les champs textuels.
+		
+		La Figure~\ref{fig:ticketing_commands_brute} présente un aperçu de la table \texttt{ticketing\_commands} avant transformation.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{pics/28_table_ticketing_commands_brute.png}
+			\caption{Aperçu de la table \texttt{ticketing\_commands} avant transformation}
+			\label{fig:ticketing_commands_brute}
+		\end{figure}
+		
+		Les principales transformations réalisées sont les suivantes :
+		
+		\begin{itemize}
+			\item conservation des identifiants d’origine ;
+			\item nettoyage des champs de dates avec la fonction \texttt{trim()} ;
+			\item remplacement des montants manquants par la valeur \texttt{0} ;
+			\item nettoyage du statut de paiement ;
+			\item remplacement des références de transaction manquantes par une chaîne vide ;
+			\item génération d’un fichier CSV propre et exploitable dans Power BI.
+		\end{itemize}
+		
+		La Figure~\ref{fig:tmap_ticketing_commands} illustre les transformations réalisées dans le composant \texttt{tMap}.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{pics/29_transformation_tmap_ticketing_commands.png}
+			\caption{Transformation des données de la table \texttt{ticketing\_commands} dans \texttt{tMap}}
+			\label{fig:tmap_ticketing_commands}
+		\end{figure}
+		
+		Les expressions utilisées dans le composant \texttt{tMap} sont les suivantes :
+		
+		\begin{lstlisting}[language=Java,breaklines=true,basicstyle=\ttfamily\small]
+			row1.id
+			
+			row1.user_id
+			
+			row1.created_at == null
+			? ""
+			: row1.created_at.trim()
+			
+			row1.updated_at == null
+			? ""
+			: row1.updated_at.trim()
+			
+			row1.reference == null
+			? ""
+			: row1.reference.trim()
+			
+			row1.amount == null ||
+			row1.amount.trim().equals("") ||
+			row1.amount.trim().equals("NULL")
+			? "0"
+			: row1.amount
+			
+			row1.status == null
+			? ""
+			: row1.status.trim()
+			
+			row1.place_id == null ||
+			row1.place_id.trim().equals("") ||
+			row1.place_id.trim().equals("NULL")
+			? "0"
+			: row1.place_id
+			
+			row1.reference_transaction == null ||
+			row1.reference_transaction.trim().equals("NULL")
+			? ""
+			: row1.reference_transaction.trim()
+		\end{lstlisting}
+		
+		Après l’exécution du job ETL, un fichier nettoyé a été généré. La Figure~\ref{fig:execution_ticketing_commands} présente l’exécution réussie du job Talend.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.9\textwidth]{pics/30_execution_job_ticketing_commands.png}
+			\caption{Exécution du job ETL de la table \texttt{ticketing\_commands}}
+			\label{fig:execution_ticketing_commands}
+		\end{figure}
+		
+		Le résultat final obtenu après transformation est présenté dans la Figure~\ref{fig:resultat_ticketing_commands}. Les données sont désormais structurées et prêtes à être utilisées dans le modèle décisionnel.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{pics/31_resultat_ticketing_commands_out.png}
+			\caption{Résultat final de la transformation de la table \texttt{ticketing\_commands}}
+			\label{fig:resultat_ticketing_commands}
+		\end{figure}
+		\subsection{Transformation de la table \texttt{ticketing\_command\_line}}
+		
+		La table \texttt{ticketing\_command\_line} contient les détails des lignes de commande associées au système de billetterie. Elle représente les ventes détaillées des tickets et contient notamment les identifiants des commandes, les types de tickets, les quantités vendues, les montants ainsi que les réductions appliquées.
+		
+		Cette table joue un rôle important dans le système décisionnel, car elle permet d’analyser précisément les ventes de tickets selon plusieurs dimensions telles que le type de ticket, la quantité vendue et les revenus générés.
+		
+		La Figure~\ref{fig:ticketing_command_line_brute} présente un aperçu de la table avant transformation.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{pics/32_table_ticketing_command_line_brute.png}
+			\caption{Aperçu de la table \texttt{ticketing\_command\_line} avant transformation}
+			\label{fig:ticketing_command_line_brute}
+		\end{figure}
+		
+		Le processus ETL a été réalisé avec Talend Open Studio à l’aide des composants \texttt{tFileInputDelimited}, \texttt{tMap} et \texttt{tFileOutputDelimited}. Toutes les colonnes ont été manipulées sous forme de chaînes de caractères afin d’éviter les problèmes de conversion lors du traitement des valeurs manquantes.
+		
+		Les principales transformations réalisées sont les suivantes :
+		
+		\begin{itemize}
+			\item nettoyage des champs de dates avec la fonction \texttt{trim()} ;
+			\item remplacement des quantités vides par la valeur \texttt{0} ;
+			\item remplacement des montants vides par \texttt{0} ;
+			\item remplacement des valeurs \texttt{NULL} de \texttt{reduction\_id} par \texttt{0} ;
+			\item conservation des identifiants et références d’origine.
+		\end{itemize}
+		
+		La Figure~\ref{fig:tmap_ticketing_command_line} présente les transformations réalisées dans le composant \texttt{tMap}.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{pics/33_transformation_tmap_ticketing_command_line.png}
+			\caption{Transformation des données de la table \texttt{ticketing\_command\_line} dans \texttt{tMap}}
+			\label{fig:tmap_ticketing_command_line}
+		\end{figure}
+		
+		Les expressions utilisées dans le composant \texttt{tMap} sont les suivantes :
+		
+		\begin{lstlisting}[language=Java,breaklines=true,basicstyle=\ttfamily\small]
+			
+			row1.id
+			
+			row1.ticketing_command_id
+			
+			row1.created_at == null
+			? ""
+			: row1.created_at.trim()
+			
+			row1.updated_at == null
+			? ""
+			: row1.updated_at.trim()
+			
+			row1.reference
+			
+			row1.ticket_type_id
+			
+			row1.quantity == null ||
+			row1.quantity.trim().equals("")
+			? "0"
+			: row1.quantity
+			
+			row1.amount == null ||
+			row1.amount.trim().equals("")
+			? "0"
+			: row1.amount
+			
+			row1.reduction_id == null ||
+			row1.reduction_id.trim().equals("NULL") ||
+			row1.reduction_id.trim().equals("")
+			? "0"
+			: row1.reduction_id
+			
+		\end{lstlisting}
+		
+		Après configuration du flux ETL, le job Talend a été exécuté avec succès afin de générer un fichier nettoyé et structuré.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.9\textwidth]{pics/34_execution_job_ticketing_command_line.png}
+			\caption{Exécution du job ETL de la table \texttt{ticketing\_command\_line}}
+			\label{fig:execution_ticketing_command_line}
+		\end{figure}
+		
+		Le résultat final obtenu après transformation est présenté dans la Figure~\ref{fig:resultat_ticketing_command_line}. Les données sont désormais prêtes à être intégrées dans le Data Warehouse et exploitées dans les tableaux de bord Power BI.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{pics/35_resultat_ticketing_command_line_out.png}
+			\caption{Résultat final de la transformation de la table \texttt{ticketing\_command\_line}}
+			\label{fig:resultat_ticketing_command_line}
+		\end{figure}
+		\subsection{Transformation de la table \texttt{ticket\_types}}
+		
+		La table \texttt{ticket\_types} contient les informations relatives aux différents types de tickets disponibles dans le système de billetterie. Elle permet de relier les monuments historiques aux catégories de tickets ainsi qu’aux prix appliqués.
+		
+		Cette table joue un rôle important dans le système décisionnel, car elle permet d’analyser les revenus générés selon les types de tickets et les monuments concernés.
+		
+		La Figure~\ref{fig:ticket_types_brute} présente un aperçu de la table \texttt{ticket\_types} avant transformation.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{pics/36_table_ticket_types_brute.png}
+			\caption{Aperçu de la table \texttt{ticket\_types} avant transformation}
+			\label{fig:ticket_types_brute}
+		\end{figure}
+		
+		Le traitement ETL a été réalisé avec Talend Open Studio à l’aide des composants \texttt{tFileInputDelimited}, \texttt{tMap} et \texttt{tFileOutputDelimited}. Toutes les colonnes ont été manipulées sous forme de chaînes de caractères afin d’éviter les problèmes de conversion liés aux valeurs manquantes.
+		
+		Les principales transformations réalisées sont les suivantes :
+		
+		\begin{itemize}
+			\item conservation des identifiants d’origine ;
+			\item remplacement des valeurs manquantes de \texttt{place\_id} par \texttt{0} ;
+			\item remplacement des valeurs manquantes du champ \texttt{price} par \texttt{0} ;
+			\item remplacement des valeurs manquantes de \texttt{ticket\_types\_title\_id} par \texttt{0} ;
+			\item homogénéisation et nettoyage des données avant intégration dans Power BI.
+		\end{itemize}
+		
+		Les valeurs manquantes présentes dans les attributs numériques, notamment le champ \texttt{price}, ont été remplacées par la valeur \texttt{0}. Cette transformation permet d’assurer la cohérence des calculs analytiques dans Power BI et d’éviter les valeurs nulles susceptibles de perturber les agrégations et les indicateurs de performance.
+		
+		La Figure~\ref{fig:tmap_ticket_types} illustre les transformations réalisées dans le composant \texttt{tMap}.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{pics/37_transformation_tmap_ticket_types.png}
+			\caption{Transformation des données de la table \texttt{ticket\_types} dans \texttt{tMap}}
+			\label{fig:tmap_ticket_types}
+		\end{figure}
+		
+		Les expressions utilisées dans le composant \texttt{tMap} sont les suivantes :
+		
+		\begin{lstlisting}[language=Java,breaklines=true,basicstyle=\ttfamily\small]
+			
+			row1.id
+			
+			row1.place_id == null ||
+			row1.place_id.trim().equals("") ||
+			row1.place_id.trim().equals("NULL")
+			? "0"
+			: row1.place_id
+			
+			row1.price == null ||
+			row1.price.trim().equals("") ||
+			row1.price.trim().equals("NULL")
+			? "0"
+			: row1.price
+			
+			row1.ticket_types_title_id == null ||
+			row1.ticket_types_title_id.trim().equals("") ||
+			row1.ticket_types_title_id.trim().equals("NULL")
+			? "0"
+			: row1.ticket_types_title_id
+			
+		\end{lstlisting}
+		
+		Après configuration du flux ETL, le job Talend a été exécuté avec succès afin de produire un fichier nettoyé et structuré.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.9\textwidth]{pics/38_execution_job_ticket_types.png}
+			\caption{Exécution du job ETL de la table \texttt{ticket\_types}}
+			\label{fig:execution_ticket_types}
+		\end{figure}
+		
+		Le résultat final obtenu après transformation est présenté dans la Figure~\ref{fig:resultat_ticket_types}.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{pics/39_resultat_ticket_types_out.png}
+			\caption{Résultat final de la transformation de la table \texttt{ticket\_types}}
+			\label{fig:resultat_ticket_types}
+		\end{figure}
+		
+		Les données obtenues sont désormais homogènes, cohérentes et prêtes à être intégrées dans le Data Warehouse ainsi qu’exploitées dans les tableaux de bord Power BI.
 \end{document}

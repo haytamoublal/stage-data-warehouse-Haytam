@@ -29,3 +29,15 @@
 \contentsline {figure}{\numberline {3.16}{\ignorespaces Transformation des données de la table \texttt {recettes} dans \texttt {tMap}}}{32}{figure.3.16}%
 \contentsline {figure}{\numberline {3.17}{\ignorespaces Exécution du job ETL de la table \texttt {recettes}}}{33}{figure.3.17}%
 \contentsline {figure}{\numberline {3.18}{\ignorespaces Résultat final de la transformation de la table \texttt {recettes}}}{33}{figure.3.18}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Aperçu de la table \texttt {ticketing\_commands} avant transformation}}{34}{figure.3.19}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Transformation des données de la table \texttt {ticketing\_commands} dans \texttt {tMap}}}{35}{figure.3.20}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Exécution du job ETL de la table \texttt {ticketing\_commands}}}{36}{figure.3.21}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Résultat final de la transformation de la table \texttt {ticketing\_commands}}}{37}{figure.3.22}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Aperçu de la table \texttt {ticketing\_command\_line} avant transformation}}{38}{figure.3.23}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Transformation des données de la table \texttt {ticketing\_command\_line} dans \texttt {tMap}}}{39}{figure.3.24}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Exécution du job ETL de la table \texttt {ticketing\_command\_line}}}{40}{figure.3.25}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Résultat final de la transformation de la table \texttt {ticketing\_command\_line}}}{41}{figure.3.26}%
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Aperçu de la table \texttt {ticket\_types} avant transformation}}{42}{figure.3.27}%
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Transformation des données de la table \texttt {ticket\_types} dans \texttt {tMap}}}{43}{figure.3.28}%
+\contentsline {figure}{\numberline {3.29}{\ignorespaces Exécution du job ETL de la table \texttt {ticket\_types}}}{44}{figure.3.29}%
+\contentsline {figure}{\numberline {3.30}{\ignorespaces Résultat final de la transformation de la table \texttt {ticket\_types}}}{45}{figure.3.30}%
